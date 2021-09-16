@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './Dishes.css';
 
 import Dish from './Dish/Dish';
-import Aux from '../../hoc/Auxiliary/Auxiliaryx';
+import Aux from '../../hoc/Auxiliary/Auxiliary';
 import {Fade, AttentionSeeker} from 'react-awesome-reveal';
 
 const dishes = props => {
