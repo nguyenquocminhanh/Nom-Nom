@@ -16,7 +16,7 @@ class Receipt extends Component {
                         <div className={classes.Title}>
                             <p>Order Summary</p>
                         </div>
-
+                        {/* Test */}
                         {/* Items */}
                         {/* fetch items from Cart in Redux store */}
                         {this.props.cart.map(item => {
