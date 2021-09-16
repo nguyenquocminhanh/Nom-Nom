@@ -505,7 +505,7 @@ class ShippingInfo extends Component {
                                 <span style={{cursor: this.state.formIsValid? 'pointer' : 'not-allowed'}}>REVIEW AND PAY</span>
                         </DecoButton> 
                     </div>
-                    {/* test2 */}
+                    {/* test22 */}
                 </div>
             </div>
         )
