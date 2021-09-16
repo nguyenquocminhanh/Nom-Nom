@@ -1,0 +1,324 @@
+.ProfileContainer {
+    height: auto;
+    padding: 60px 10px;
+    padding-bottom: 5px;
+    background-color: #F0F2F2;
+    min-height: 100vh;
+    /* position: relative; */
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+
+.ProfileCard {
+    position: absolute;
+    margin: 60px 10px;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    position: absolute;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 5px 20px 0 rgba(69, 90, 100, 0.1);
+    border: none;
+    min-width: 800px;
+    min-height: 500px;
+    height: auto;
+    background-color: whitesmoke;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.Profile {
+    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+    background: linear-gradient(to right, #ee5a6f, #f29263);
+    height: 100%;
+    width: 100%;
+    position: relative;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.Info {
+    height: auto;
+    width: 100%;
+}
+
+.CircleBorder {
+    width: 100px;
+    height: 100px;
+    background: gray;
+    border-radius: 50%;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+    position: absolute;
+    cursor: pointer;
+}
+
+.CircleBorder:hover .Img{
+    filter: brightness(30%);
+    transition: all 0.5s ease;
+}
+
+.CircleBorder:hover .ChangePhotoButton {
+    visibility: visible;
+}
+
+.Img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background: url(data:image/jpeg;base64,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);
+    background-position: 50% 50%;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.ChangePhotoButton {
+    visibility: hidden;
+    /* z-index: 5; */
+    font-size: 13px;
+    color: #f0f0f0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.AccountHolder {
+    font-size: 14px;
+}
+
+.ProfileInfo {
+    text-align: center;
+    color: #f0f0f0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    height: auto;
+    width: 100%;
+    font-size: 18px;
+    text-transform: capitalize;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* color: #919aa3 !important */
+}
+
+
+.Info {
+    padding: 35px;
+    padding-top: 25px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.NavigationBar {
+    width: 100%;
+    height: 45px;
+}
+
+.NavigationBar ul {
+    border-bottom: 1px solid #dee2e6;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    /* ul */
+    list-style: none;
+    overflow: hidden
+}
+
+.NavigationBar ul li {
+    float: left;
+    margin: 0px;
+    margin-bottom: -1px;
+    /* Điều chỉnh theo kích thước của nội dung*/
+    /* width: auto; */
+    width: 90px;
+    height: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+}
+
+.NavItem {
+    font-weight: 600;
+    border: none;
+    display: block;
+    padding: .5rem 1rem;
+    color: #007bff;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.NavItem:hover {
+    color: #0056b3;
+}
+
+.Active {
+    border-bottom: 3px solid #0062cc;
+    color: #495057;
+}
+
+.Active:hover {
+    color: #495057;
+}
+
+.Location {
+    color: #f0f0f0
+}
+
+.Male {
+    color: #3B5998;
+    font-size: 23px;
+}
+
+.Female {
+    color: #e6005c;
+    font-size: 23px;
+}
+
+.InfoContent {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-row-gap: 20px
+}
+
+.Row {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.Col {
+    float: left;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.Title {
+    font-weight: 550;
+    margin: 10px 0px;
+}
+
+.Content {
+    color: #919aa3 !important;
+    cursor: pointer;
+}
+
+.Input {
+    height: 25%;
+    width: 75%;
+}
+
+.SubmitButtonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SubmitButton {
+    margin: 0px;
+    font-size: 14px;
+    color: #f0f0f0;
+    line-height: 16px;
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px 7px 13px;
+    border-radius: 3px;
+    border-color: salmon;
+    /* box-shadow: 0 1px 0 rgb(255 255 255 / 60%) inset; */
+    width: 30%;
+    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+    background: linear-gradient(to right, #ee5a6f, #f29263);
+    /* border: 1px solid #6c6e73;
+    border-color: #adb1b8 #a2a6ac #8d9096; */
+    text-decoration: none;
+    cursor: pointer;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 6px 3px rgba(102, 102, 102, 0.3);
+}
+
+.SubmitButton:disabled {
+    border: 1px solid #999999;
+    background: #cccccc;
+    color: #666666;
+    cursor: not-allowed
+}
+
+.SubmitButton:active {
+    transform: translate(0);
+    box-shadow: none;
+}
+
+.IsSavedConfirmation {
+    padding: 45px 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 20px;
+}
+
+.IsSavedConfirmation p {
+    text-align: center;
+    font-family: 'Roboto, sans-serif';
+    height: 40px;
+    /* padding: 20px 30px; */
+    color: #5E6977;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.IsSavedConfirmation .Buttons {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.Notification {
+    width: 100%;
+    text-align: center;
+}
+
+.Notification p {
+    color: #35a62b;
+    height: 25px;
+    font-size: 16px;
+    margin: 10px 0px;
+}
+
+@media only screen and (max-width: 768px) {
+    .IsSavedConfirmation {
+        font-size: 80%;
+        padding-top: 20px;
+    }   
+    
+    .IsSavedConfirmation p {
+        font-size: 18px
+    }
+}
+
+@media (max-width: 500px) {
+    .IsSavedConfirmation {
+        font-size: 60%;
+    }   
+
+    .RemoveItemConfirmation p {
+        font-size: 12px
+    }
+}

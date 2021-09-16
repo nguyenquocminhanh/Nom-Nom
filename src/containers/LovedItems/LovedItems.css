@@ -1,0 +1,115 @@
+.LovedItems {
+    min-height: 90vh;
+    font-family: 'Roboto, sans-serif';
+    background-color: #ebe9e6;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+ 
+.LovedItems .Title {
+    position: relative;
+    box-sizing: border-box;
+    text-align: center;
+    margin: 30px;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.LovedItems .Title p {
+    color: #701515;
+    text-shadow: 0 0 3px rgba(112, 21, 21, 0.5);
+    font-size: 40px;
+    font-weight: 600;
+    background: #ebe9e6;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: Souvenir,Cooper,serif;
+}
+
+.LovedItems .LovedDishes {
+    width: 100%;
+    height: auto;
+    background-color: #ebe9e6;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 40px;
+    grid-column-gap: 40px;
+    padding: 30px 50px;
+    padding-bottom: 70px;
+    transition: all 2s;
+}
+
+.LovedItems .NoLovedDishes {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(112, 21, 21, 0.4);
+    font-size: 30px;
+    font-weight: 300;
+}
+
+@media (min-width: 1440px) {
+    .LovedItems .LovedDishes {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        padding-bottom: 70px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .LovedItems .LovedDishes {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-row-gap: 45px;
+        padding: 20px 15px;
+    }
+    .LovedItems .Title p {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .LovedItems .NoLovedDishes {
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 500px) {
+    .LovedItems .LovedDishes {
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+        padding: 15px 12px;
+        padding-bottom: 70px;
+    }
+    
+    .LovedItems .Title {
+        margin: 45px 0px;
+        margin-bottom: 0;
+    }
+
+    .LovedItems .Title p{
+        font-size: 24px;
+    }
+
+    .LovedItems .NoLovedDishes {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 320px) {
+    .LovedItems .LovedDishes {
+        grid-template-columns: 1fr;
+        grid-row-gap: 55px;
+        padding: 20px 35px;
+    }
+
+    .LovedItems .Title p {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .ModalContent {
+        min-width: 450px;
+    }
+}

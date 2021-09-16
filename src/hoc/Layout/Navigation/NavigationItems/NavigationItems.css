@@ -1,0 +1,90 @@
+/* Mobile Devices < 425px */
+.NavigationItems {
+    margin: 0;
+    padding: 0;
+    /* NavigationItems is the unorder list, remove the stype of unoder list */
+    list-style: none;
+
+    /* ********* */
+    /* Navigation Item inside is in the SAME COLUMN*/
+    display: flex;
+    flex-flow: column;
+
+    align-items: center;
+    /* use full height of toolbar */
+    height: 100%;
+    width: 100%;
+}
+
+/* .NavigationItems .Icon {
+    font-size: 300%;
+    padding: 20px 0;
+    width: 80px;
+} */
+
+.NavigationItems .Icon {
+    font-size: 200%;
+    width: 80px;
+}
+
+.NavigationItems .NumberOfItem {
+    position: absolute;
+    top: 40%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    background-color: darkcyan;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    justify-items: center;
+    align-items: center;
+    
+    text-align: center;
+    color: white;
+    font-weight: 900px;
+    font-size: 13px;
+}
+
+@media (min-width: 426px) {
+    .NavigationItems .Icon {
+        font-size: 300%;
+        width: 100px;
+    }
+}
+
+/* Desktop device */
+@media (min-width: 500px) {
+    .NavigationItems {
+        margin: 0;
+        padding: 0;
+        /* NavigationItems is the unorder list, remove the stype of unoder list */
+        list-style: none;
+        
+        /* ********* */
+        /* Navigation Item inside is in the SAME ROW and next to each other */
+        display: flex;
+        flex-flow: row;
+
+        align-items: center;
+        /* use full height of toolbar */
+        height: 100%;
+    }
+
+    .NavigationItems .Icon {
+        width: 80px;
+    }
+}
+
+@media (min-width: 768px) {
+    .NavigationItems .Icon {
+        width: 70px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .NavigationItems .Icon {
+        width: 100px;
+    }
+}

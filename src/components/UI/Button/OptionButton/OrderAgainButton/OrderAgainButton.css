@@ -1,0 +1,49 @@
+.OrderAgainButton {
+    background-color: #FFD814;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    border-color: #FCD200;
+    border-style: solid;
+    border-width: 2px;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 10px!important;
+    color: #0F1111;
+    font-size: 14px;
+    line-height: 20px;
+    height: 25px;
+    outline: 0;
+    width: 100%;
+}
+
+.OrderAgainButton:hover {
+    outline: 0;
+    background-color: #F7CA00;
+    border-color: #F2C200;
+    color: #0F1111;
+}
+
+.Active {
+    pointer-events: none;
+    cursor: default;
+    background-color: #fff;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #35a62b;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    height: 25px;
+    color: #067D62;
+}
+
+@media (min-width: 800px) {
+    .OrderAgainButton {
+        height: 32px;
+    }
+
+    .Active {
+        height: 32px;
+    }
+}

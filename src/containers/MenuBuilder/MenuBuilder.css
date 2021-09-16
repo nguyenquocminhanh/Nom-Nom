@@ -1,0 +1,121 @@
+.MenuBuilder {
+   margin: 0px;
+   padding: 0x;
+   background-color: #ebe9e6;
+   /* height: 100%;
+   max-width: 100%; */
+}
+
+.Ads {
+   height: 100%;
+   padding: 15px 0px;
+   width: 100%;
+   display: block;
+   overflow: hidden;
+}
+
+.Ads span {
+   cursor: pointer;
+   background-color: #ebe9e6;
+   overflow: hidden;
+   font-family: Souvenir,Cooper,serif;
+   color:  #701515;
+   text-align: center;
+   font-size: 18px;
+   font-weight: 600;
+   font-style: italic;
+   /* Transition auto rolling */
+   -webkit-animation-duration: 13s;
+   -webkit-animation-name: move;
+   -webkit-animation-iteration-count: infinite;
+   -webkit-animation-direction: right;
+   -webkit-animation-timing-function: linear;
+   white-space: nowrap;
+}
+
+.Ads span:hover {
+   color: #BF5C2C;
+   -webkit-animation-play-state: paused;
+}
+
+@-webkit-keyframes move {
+   0% {
+       margin-left: -1500px;
+   }
+   100% {
+       margin-left: 1500px;
+   }
+}
+
+.ModalContent {
+    width: auto;
+}
+
+@media (max-width: 1024px) {
+
+   @-webkit-keyframes move {
+       0% {
+           margin-left: -1200px;
+       }
+       100% {
+           margin-left: 1200px;
+       }
+   }
+
+   .Ads {
+       padding-top: 12px;
+       padding-bottom: 12px;
+       font-size: 18px;
+   }
+
+   .ModalContent {
+        width: auto;
+    }
+}
+
+@media (max-width: 430px) {
+   .Ads {
+       font-size: 13px;
+       padding-top: 12px;
+       padding-bottom: 12px;
+   }
+
+   @-webkit-keyframes move {
+       0% {
+           margin-left: -450px;
+       }
+       100% {
+           margin-left: 450px;
+       }
+   }
+
+   .ModalContent {
+        width: auto;
+    }
+}
+
+@media (max-width: 320px) {
+   .Ads {
+       padding-top: 8px;
+       padding-bottom: 8px;
+   }
+
+   @-webkit-keyframes move {
+       0% {
+           margin-left: -350px;
+       }
+       100% {
+           margin-left: 350px;
+       }
+   }
+
+   .ModalContent {
+        width: auto;
+    }
+}
+
+@media (min-width: 768px) {
+    .ModalContent {
+        min-width: 450px;
+    }
+}

@@ -1,0 +1,518 @@
+#txtComputer {
+    font-size: 24px;
+}
+
+.ShippingInfoWrapper {
+    background-color: #ebe9e6;
+}
+
+.ShippingInfo p {
+    margin: 0;
+}
+
+.ShippingInfo {
+    margin: 20px;
+    border-radius: 8px;
+    border: 2px solid rgba(112, 21, 21, 0.7);
+    padding-bottom: 15px;
+}
+
+.Invalid {
+    border: 1px solid red;
+}
+
+.Title {
+    margin-top: 10px;
+}
+
+.Title p {
+    color: #701515;
+    padding: 0;
+    margin: 0;
+    font-family: 'Souvenir,Cooper,serif';
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+/* ########################################## */
+/* DELIVERY OPTIONS */
+.DeliveryOptions,
+.ShippingAddress,
+.ContactInfo {
+    word-spacing: 2px;
+    font-size: 26px;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Topic */
+.DeliveryOptions h4,
+.ShippingAddress h4,
+.ContactInfo h4 {
+    margin: 0;
+    padding-left: 30px;
+}
+
+.DeliveryOptions {
+    padding: 0px;
+}
+
+.Options {
+    padding: 0 30px;
+}
+
+.Options .Delivery,
+.Options .PickUp {
+    cursor: pointer;
+    position: relative;
+    padding: 0 20px;
+    display: grid;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    grid-template-columns: 5fr 1fr;
+    width: 100%;
+    position: relative;
+}
+
+.Options .Checked {
+    position: absolute;
+    top: -11px;
+    right: -11px;
+}
+
+.Options .Checked img {
+    width: 100%;
+    height: 100%;
+}
+
+.Options .PickUp {
+    margin-top: 30px;
+}
+
+
+.Options .PickUp:hover,
+.Options .Delivery:hover {
+    border: 1px solid rgba(0, 0, 0, 0.8) !important;
+}
+
+.Delivery .Content,
+.PickUp .Content {
+    padding: 20px 0px;
+    float: left;
+}
+
+.Delivery .Content p,
+.PickUp .Content p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.Delivery .Content .Price,
+.PickUp .Content .Price {
+    float: right;
+}
+
+.Price p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* ########################################## */
+/* SHIPPING ADDRESS */
+.ShippingAddress {
+    padding: 0;
+    padding-bottom: 30px;
+    background-color: #ebe9e6;
+}
+.ShippingAddress h4 {
+    margin: 0;
+    padding-left: 30px;
+}
+
+.ShippingAddress .Hint {
+    font-size: 16px;
+    font-weight: 300;
+    text-transform: none;
+    margin: 0;
+    padding-left: 30px;
+    margin-top: 15px;
+    font-style: italic;
+    word-spacing: 1px;
+}
+
+.ShippingAddress p {
+    padding: 0;
+}
+
+/* Address Form */
+.ShippingAddress .AddressForm {
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 40px;
+    background-color: #ebe9e6;
+    grid-column-gap: 30px;
+    grid-row-gap: 40px;
+}
+
+.ShippingAddress .AddressForm span {
+    text-transform: none;
+    font-size: 14px;
+}
+
+/* ########################################### */
+/* Contact Details */
+.ContactDetails {
+   padding: 0;
+   padding-bottom: 30px;
+}
+
+.ContactDetails .ContactForm {
+    padding: 0 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 40px;
+
+    grid-column-gap: 30px;
+    grid-row-gap: 40px;
+}
+
+.ContactForm span {
+    font-size: 14px;
+    text-transform: none;
+}
+
+/* Check Box */
+.CheckBox {
+    padding: 0 30px;
+}
+
+.CheckBox .Age,
+.CheckBox .Adv {
+    display: block;
+    font-size: 17px;
+}
+
+.CheckBox .CheckBoxBtn {
+    margin-right: 15px;
+}
+
+/* Submit Button */
+.SubmitButton {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.ErrorMessage {
+    font-size: 13px;
+    color: #e32b2b;
+    font-weight: bold;
+}
+
+
+@media (max-width: 800px) {
+    .ShippingInfo {
+        padding-top: 25px;
+        padding-bottom: 30px;
+    }
+
+    .ShippingAddress .AddressForm,
+    .ContactDetails .ContactForm {
+        grid-auto-rows: 35px;
+        grid-row-gap: 45px;
+    }
+
+    .ShippingInfo .Title p{
+        height: 50;
+        font-size: 35px;
+    }
+
+    .ShippingInfo h4 {
+        font-size: 22px;
+    }
+
+    .ShippingInfo .Content p {
+        font-size: 16px;
+    }
+
+    .ShippingInfo .PickUp,
+    .ShippingInfo .Delivery {
+        padding: 0px 13px;
+    }
+
+    .Hint {
+        font-size: 15px;
+    }
+
+    .CheckBox {
+        padding-top: 15px;
+        padding-bottom: 10px;
+    }
+
+    .CheckBox .CheckBoxBtn {
+        margin-right: 10px;
+    }
+
+    .ShippingInfo .Adv,
+    .ShippingInfo .Age {
+        font-size: 15px;
+    }
+
+    input[type=checkbox] {
+        transform: scale(1.1);
+    }
+
+    .SubmitButton span{
+        font-size: 20px;
+    }
+
+    .Options .PickUp {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ShippingInfoWrapper .ShippingInfo {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .ShippingInfo h4,
+    .Options,
+    .ShippingInfo .AddressForm,
+    .ShippingInfo .ContactForm {
+        padding: 0px 15px;
+    }
+
+    .ShippingInfo .PickUp,
+    .ShippingInfo .Delivery {
+        padding: 0px 10px;
+    }
+
+    .ShippingInfo .Hint {
+        padding-left: 15px;
+        font-size: 14px;
+    }
+
+    .ShippingInfo .Title p{
+        font-size: 26px;
+    }
+
+    .ShippingInfo h4 {
+        font-size: 19px;
+    }
+
+    .ShippingInfo .Content p {
+        font-size: 15px;
+    }
+
+    .Price p {
+        font-size: 15px;
+    }
+
+    .ContactForm span,
+    .AddressForm span {
+        font-size: 14px;
+    }
+
+    .CheckBox {
+        padding: 0px 15px;
+        padding-top: 13px;
+        padding-bottom: 8px;
+    }
+
+    .CheckBox .CheckBoxBtn {
+        margin-right: 8px;
+    }
+
+    .ShippingInfo .Adv,
+    .ShippingInfo .Age {
+        font-size: 14px;
+    }
+
+    input[type=checkbox] {
+        transform: scale(1.1);
+    }
+
+    .SubmitButton span{
+        font-size: 18px;
+    }
+
+    .ErrorMessage {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 450px) {
+    .ShippingAddress .AddressForm,
+    .ContactDetails .ContactForm {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 38px;
+        grid-row-gap: 40px;
+    }
+
+    .ShippingInfoWrapper .ShippingInfo {
+        margin: 15px 10px;
+        padding: 10px 0px;
+    }
+
+    .ShippingInfo h4,
+    .Options,
+    .ShippingInfo .AddressForm,
+    .ShippingInfo .ContactForm {
+        padding: 0px 15px;
+    }
+
+    .ShippingInfo .PickUp,
+    .ShippingInfo .Delivery {
+        padding: 0px 7px;
+    }
+
+    .ShippingInfo .Hint {
+        padding-left: 15px;
+        white-space: 1px;
+        font-size: 14px;
+    }
+    
+    .ShippingInfo h4 {
+        font-size: 16px;
+    }
+
+    .ShippingInfo .Content p {
+        font-size: 15px;
+        line-height: 22px;
+    }
+
+    .Price p {
+        font-size: 14px;
+    }
+
+    .ContactForm span,
+    .AddressForm span {
+        font-size: 13px;
+    }
+
+    .CheckBox {
+        padding: 0px 15px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    .CheckBox .CheckBoxBtn {
+        margin-right: 6px;
+    }
+
+    .ShippingInfo .Adv,
+    .ShippingInfo .Age {
+        font-size: 14px;
+    }
+
+    input[type=checkbox] {
+        transform: scale(1.05);
+    }
+
+    .SubmitButton span{
+        font-size: 16px;
+    }
+
+    .Options {
+        word-spacing: 2px;
+    }
+
+    .Options .PickUp {
+        margin-top: 15px;
+    }
+
+    .ShippingInfo p {
+        line-height: 15px;
+        margin-top: 2px;
+    }
+
+    .Checked {
+        line-height: 18px;    
+    }
+
+    .ShippingInfo .ShippingAddress {
+        padding-bottom: 10px;
+    }
+
+    .SubmitButton {
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 375px) {
+    .ShippingAddress .AddressForm,
+    .ContactDetails .ContactForm {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 35px;
+        grid-row-gap: 37px;
+    }
+
+    .ShippingInfo .Title p{
+        font-size: 22px;
+    }
+
+    .ShippingInfo h4 {
+        font-size: 16px;
+    }
+
+    .ShippingInfo .Content p {
+        font-size: 13px;
+        line-height: 16px;
+    }
+
+    .Price p {
+        font-size: 13px;
+    }
+
+    .ShippingInfo .ContactForm span,
+    .ShippingInfo .AddressForm span {
+        font-size: 13px;
+    }
+
+    .CheckBox {
+        padding: 0px 15px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+
+    .CheckBox .CheckBoxBtn {
+        margin-right: 6px;
+    }
+
+    .ShippingInfo .Adv,
+    .ShippingInfo .Age {
+        font-size: 13px;
+    }
+
+    input[type=checkbox] {
+        transform: scale(1);
+    }
+
+    .SubmitButton span{
+        font-size: 14px;
+    }
+
+    .Options {
+        word-spacing: 1px;
+    }
+
+    .ShippingInfo p {
+        line-height: 13px;
+        margin-top: 2px;
+    }
+
+    .ErrorMessage {
+        font-size: 11px;
+    }
+
+    .ShippingInfo .Hint {
+        padding-left: 15px;
+        white-space: 1px;
+        font-size: 12px;
+    }
+}

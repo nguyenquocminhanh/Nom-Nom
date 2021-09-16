@@ -1,0 +1,21 @@
+.OrderHistory {
+    height: auto;
+    padding: 60px 10px;
+    padding-bottom: 5px;
+    background-color: #F0F2F2;
+
+    /* Xếp theo chiều dọc */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.NoOrders {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(112, 21, 21, 0.4);
+    font-size: 30px;
+    font-weight: 300;
+}

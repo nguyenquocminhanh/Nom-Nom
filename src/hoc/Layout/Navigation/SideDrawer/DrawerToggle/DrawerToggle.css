@@ -1,0 +1,31 @@
+.DrawerToggle {
+    width: 50px;
+    /* expand full of Toolbar */
+    height: 100%;
+
+    /* display 3 line in a same column */
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 10px;
+    padding-right: 0;
+    box-sizing: border-box;
+
+    cursor: pointer;
+}
+
+/* CSS for 3 parallel lines */
+.DrawerToggle div {
+    width: 90%;
+    height: 3px;
+    background-color: white;
+}
+
+/* When the width is over 500px, DrawerToggler Button is invisible */
+@media (min-width: 500px) {
+    .DrawerToggle {
+        display: none;
+    }
+}

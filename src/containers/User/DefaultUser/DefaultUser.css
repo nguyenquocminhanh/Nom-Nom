@@ -1,0 +1,190 @@
+.DefaultUser {
+    width: 100%;
+    height: auto;
+    background-color: #ebe9e6;
+    padding: 5px 25px;
+    padding-top: 60px;
+    font-size: 12px;
+}
+
+.DefaultUser .Greating {
+    text-transform: capitalize;
+    color: #701515;
+    padding: 0;
+    margin: 0;
+    font-family: 'Souvenir,Cooper,serif';
+    font-weight: 600;
+    font-size: 20px;
+}
+/* 
+.DefaultUser .Slogan {
+    margin-top: 10px;
+    max-height: 300px;
+}
+
+.DefaultUser .Slogan img {
+    max-height: 300px;
+    width: 100%; */
+/* } */
+
+.DefaultUser .ShoppingCart {
+    margin-top: 15px;
+ 
+    /* combo 3 - implement horizontal scrolling using Flexbox */
+    /* overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory; */
+
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-row-gap: 25px;
+    grid-column-gap: 25px;
+}
+
+.Image {
+    height: 150px;
+    display: flex;
+    border: 2px #D5D9D9 solid;
+    border-radius: 4px;
+}
+
+.Image img {
+    height: 100%;
+}
+
+.Description {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #F0F2F2;
+    
+    align-items: center;
+    font-size: 16px;
+}
+
+/* Button  */
+.DefaultUser .NavButton {
+    margin: 15px 0px;
+    background-color: #ebe9e6;
+}
+
+.Promotion {
+    width: 100%;
+    /* clear float */
+    display: grid;
+    grid-template-columns: 3fr 4fr 4fr;
+    grid-column-gap: 60px;
+    height: auto;
+    max-height: 600px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+.CurrentPoint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;   
+}
+
+.CurrentPoint p,
+.CurrentPoint h3 {
+    margin: 10px 0;
+}
+
+.CouponWrapper {
+    width: 75%;
+    margin: 10px 10px;
+    margin-bottom: 15px;
+}
+
+.YourCoupons h3,
+.OtherCouponsContainer h3 {
+    text-align: center;
+}
+
+.YourCoupons h3,
+.YourCoupons p,
+.OtherCouponsContainer h3,
+.OtherCouponsContainer p {
+    margin: 10px 0;
+}
+
+.YourCoupons {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 600px;
+    align-items: center;
+}
+
+.OtherCoupons {
+    /* combo 3 - implement horizontal scrolling using Flexbox */
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-height: 600px;
+}
+
+/* .OtherCoupons::-webkit-scrollbar {
+    width: 5px;
+} */
+
+  /* Track */
+.OtherCoupons::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+       
+/* Handle */
+.OtherCoupons::-webkit-scrollbar-thumb {
+    background: #888                ; 
+}
+      
+/* Handle on hover */
+.OtherCoupons::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+.Score {
+    font: 45px Arial, sans-serif;
+    font-weight: 800;
+    font-size: 70px;
+    color: #666;
+}
+
+
+@media (min-width: 800px){
+    .DefaultUser {
+        font-size: 105%;
+    }
+
+    .DefaultUser .NavButton {
+        display: flex;
+        justify-content: center;
+        margin: 35px;
+        height: 75%;
+    }
+
+    .DefaultUser .NavButton button {
+        width: auto;
+    }
+
+    .DefaultUser .Slogan {
+        padding: 0px 100px;
+    }
+    
+}

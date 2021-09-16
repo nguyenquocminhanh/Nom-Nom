@@ -1,0 +1,44 @@
+/* Apply for devices below 600px */
+.InfoModal {
+    /* Modal should stay in position even as we scoll */
+    position: fixed;        /* create fixed porsion modal */
+    /* An element with greater stack order is always
+    in front of an element with a lower stack order. */
+    z-index: 500;      
+    background-color: #ebe9e6;
+/* width is only 70%, constant - can not automatic adjustable when size down */
+    width: 70%;
+    border: 1px solid #ccc;
+    /* box-shadow: 1px 1px 1px black; */
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    padding: 25px 16px;
+    /* Distance compared with very left border of next element */
+    /* left: 15%; */
+    /* Distance compared with very left border of next element */
+    /* top: 20%; */
+    /* If you set box-sizing: border-box; on an element,
+    padding and border are included in the width and height */
+    box-sizing: border-box;
+    /* change property values smoothly, over a given duration */
+    /* trượt lên xuống */
+    transition: all 0.4s ease-out;
+}
+
+@media (min-width: 600px) {
+    .InfoModal {
+        width: 60%;
+        left: 20%
+    }   
+}
+
+@media (min-width: 768px) {
+    .InfoModal {
+        /* height: auto;
+        width: auto; */
+        /* left: calc(50% - 200px) */
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }    
+}

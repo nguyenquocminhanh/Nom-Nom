@@ -1,0 +1,405 @@
+/* Wrapper */
+
+.Order {
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+    margin-bottom: 15px;
+}
+
+/* Title */
+
+.Order .HeadOrder {
+    font-size: 13px;
+    background-color: #F0F2F2;
+    border: 1px #D5D9D9 solid;
+    padding: 0px 18px;
+    border-radius: 8px 8px 0 0;
+}
+
+.Order .HeadOrder .OrderInfo {
+    float: left;
+    width: 60%;
+    display: grid;
+    
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.Order .HeadOrder .OrderInfo .OrderPlaced,
+.Order .HeadOrder .OrderInfo .ShipTo,
+.Order .HeadOrder .OrderInfo .OrderTotal {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.Order .HeadOrder .OrderInfo .ShipTo .CustomerName {
+    cursor: pointer;
+    display: flex;
+    color: #007185;
+    position: relative;
+    justify-content: center;
+}
+
+.Popover {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: #e6e8d8;
+    padding: 14px 18px;
+    padding-bottom: 8px;
+    top: 27px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    height: auto;
+    width: auto;
+    border-color: rgba(0,0,0,.2);
+    border-radius: 4px;
+}
+
+.Popover::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    right: calc(50% - 10px);
+    top: -10px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #e6e8d8 transparent;
+    transition-duration: 0.1s;
+    transition-property: transform;
+}
+
+.Order .HeadOrder .OrderInfo .ShipTo .CustomerName:hover .Popover {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    /* transform: translate(-25%, 25%); */
+    transition: 1s ease all;
+}
+
+.PopoverContent li {
+    white-space: nowrap;
+    color: #000;
+    margin-bottom: 10px;
+    /* word-spacing: 3px; */
+}
+
+.FullName {
+    font-weight: bold;
+}
+
+.Order .HeadOrder .OrderInfo .ShipTo .CustomerName:hover {
+    color: #C7511F;
+}
+
+.Order .HeadOrder .OrderInfo .ShipTo .CustomerName:hover > .Name {
+    text-decoration: underline;
+}
+
+.ArrowDown {
+    height: 100%;
+    top: 5px
+}
+
+.Order .HeadOrder .OrderNumber {
+    float: right;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.Order .HeadOrder p {
+    margin: 0;
+    padding: 0;
+}
+
+.Order .ContentOrder {
+    background-color: #fff;
+    border: 1px #D5D9D9 solid;
+    padding: 15px 18px;
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+}
+
+.Order .ContentOrder .Buttons {
+    background-color: #fff;
+    height: 100%;
+    padding: 0px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-content: center;
+    padding-top: 15px;
+}
+
+.Order .ContentOrder .Content .OrderStatus {
+    color: #0F1111;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+/* List Of Images */
+
+.Order .ContentOrder .Content .ListOfImages {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-row-gap: 20px;
+    grid-column-gap: 20px;
+    /* combo 3 - implement horizontal scrolling using Flexbox */
+    /* overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory; */
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.ListOfImages::-webkit-scrollbar {    display: none;}
+
+.Order .ContentOrder .Content .ListOfImages .Image {
+    height: 85px;
+    display: flex;
+    border: 2px #D5D9D9 solid;
+    border-radius: 4px;
+}
+
+.Order  .ContentOrder .Content .ListOfImages .Image img {
+    height: 100%;
+}
+
+.Order  .ContentOrder .Content .ListOfImages .Image .Description {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #F0F2F2;
+    
+    align-items: center;
+    font-size: 14px;
+}
+
+.Added {
+    color: #067D62;
+    font-size: 14px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.Added img {
+    max-height: 60%;
+    width: auto;
+}
+
+.ModalContent {
+    height: auto;
+    min-width: 350px;
+    padding: 0px 5px;
+}
+
+.Description {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    grid-column-gap: 20px;
+}
+
+.RateTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ImageRating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ImageRating img {
+    height: 120px;
+    height: 120px;
+}
+
+.Comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.IncDecButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.IncrementButton,
+.IncrementButton {
+    width: 100px
+}
+
+.Submit {
+    min-height: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Thankyou {
+    color: #35a62b;
+    height: 25px;
+    font-size: 14px;
+    margin: 10px 0px;
+}
+
+.DishesLeft {
+    font-size: 13px;
+    
+}
+
+.SubmitButton {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 40px;
+}
+
+.ModalRatingReviewContent {
+    height: auto;
+    width: auto;
+    padding: 0px 5px;
+}
+
+.ModalRatingReview {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.RateReviewTitle {
+    margin: 0;
+    padding: 0;
+}
+
+.RateReviewTitle p {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+/* Button  */
+/* .Order .Button {
+    margin: 15px 0px;
+} */
+
+/* .Order .Button button { */
+    /* để nút ko bị bành ra cả 2 bên vì container của nó display flex column */
+    /* background-color: lightslategrey;
+    border: none;
+    color: #FFFFFF; */
+    /* căn chữ */
+    /* text-align: center;
+    font-size: 12px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 10px 25px;
+} */
+
+/* .Order .Button button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.8s;
+} */
+
+/* .Order .Button button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    right: -10px;
+    transition: 0.5s;
+} */
+
+/* .Order .Button button:hover span {
+    padding-right: 20px;
+}
+  
+.Order .Button button:hover span:after {
+    opacity: 1;
+    right: 0;
+}  */
+
+@media (min-width: 500px) {
+    .Order .HeadOrder {
+        font-size: 20px;
+    }
+
+    /* .Order .Detail {
+        font-size: 18px;
+    } */
+
+    /* .Order .Button button {
+        font-size: 18px;
+    } */
+
+    /* .Order .ListOfImages {
+        flex-wrap: wrap;
+        align-content: space-around;
+    } */
+
+    .Order .ContentOrder .Content .ListOfImages .Image {
+        height: 100px;
+        /* margin: 10px 0px; */
+        margin-right: 15px;
+    }
+}
+
+@media (min-width: 800px) {
+    .Order .HeadOrder {
+        height: 65px;
+        font-size: 14px;
+        padding-right: 35px;
+    }
+    
+    .Order .ContentOrder .Content .ListOfImages {
+        flex-wrap: wrap;
+        align-content: space-around;
+    }
+
+    .Order .ContentOrder .Content .ListOfImages .Image {
+        height: 120px;
+    }
+
+    .Order .HeadOrder .OrderNumber,
+    .Order .HeadOrder .OrderInfo,
+    .Order .HeadOrder .OrderInfo .OrderPlaced,
+    .Order .HeadOrder .OrderInfo .ShipTo,
+    .Order .HeadOrder .OrderInfo .OrderTotal {
+        height: 100%;
+    }
+
+    .Order .ContentOrder .Content .OrderStatus {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: 700;
+    }
+}

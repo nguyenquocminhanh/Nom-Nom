@@ -1,0 +1,94 @@
+.Security {
+    height: auto;
+    padding: 60px 10px;
+    padding-bottom: 5px;
+    background-color: #F0F2F2;
+    min-height: 100vh;
+    /* Xếp theo chiều dọc */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+
+.Security h3 {
+    text-transform: uppercase;
+}
+
+.Security .ResetPassWord .ResetPasswordForm {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.OldPassword,
+.NewPassword {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 15px 0px;
+    width: auto;
+}
+
+.OldPassword input,
+.NewPassword input {
+    margin-top: 8px;
+    height: 30px;
+    width: 200px;
+}
+
+.OldPassword input[type=password],
+.NewPassword input[type=password] {
+    font-size: 13px;
+}
+
+.Invalid {
+    border: 1px solid red;
+    background-color: #FDA49A;
+}
+
+.SubmitButton {
+    margin-top: 30px;
+}
+
+.SubmitButton button {
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 5px 15px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 6px #999;
+}
+
+.SubmitButton .button:hover {
+    background-color: #3e8e41
+}
+
+.SubmitButton button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 3px #666;
+    transform: translateY(4px);
+  }
+
+.SubmitButton button:disabled {
+    cursor: not-allowed;
+    color: #666666;
+    background-color: #cccccc;
+}
+
+.InformationBox {
+    width: auto;
+    height: 15px;
+    padding: 5px 10px;
+    background-color: lightskyblue;
+}
+
+@media (min-width: 500px) {
+    .Security .ResetPassWord h3 {
+        font-size: 150%;
+    }
+} 

@@ -1,0 +1,123 @@
+/* Mobile Devices */
+.NavigationItem {
+    margin-top: 10px;
+    height: 130%;
+    /* padding and margin include in the height and width */
+    box-sizing: border-box;
+    /*make sure that can center the link a vertically, the link inside the list item*/
+    display: block;
+    cursor: pointer;
+    /* position: relative; */
+}
+
+.NavigationItem .Nav {
+    font-size: 85%;
+    color: black;
+    /* no underline */
+    text-decoration: none;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 10px 0px;
+    padding-bottom: 15px;
+
+    /* To make the text aligned center */
+    display: block;
+    position: relative;
+}
+
+.NavigationItem .Nav:hover,
+.NavigationItem .Nav:active,
+.NavigationItem .Nav.active {
+    color: #45c840;
+    background-color: #BF5C2C;
+}
+
+.NavigationItem .Type {
+    width: auto;
+    /* vị trí dựa vào parent div gần nhất là NavigationItem */
+    position: absolute;
+    color: white;
+    left: 50%;
+    transform: translate(-50%, -20%);
+    font-size: 12px;
+    font-weight: inherit;
+    /* chữ không xuống hàng */
+    white-space: nowrap;
+}
+
+/* Desktop Devices */
+@media (min-width: 500px) {
+    .NavigationItem {
+        margin: 0;
+        width: auto;
+        height: 100%;
+        width: 70px;
+        /* padding and margin include in the height and width */
+        box-sizing: border-box;
+    
+        /*make sure that can center the link a vertically, the link inside the list item*/
+        display: flex;
+        align-items: center;
+    }
+
+    .NavigationItem .Nav {
+        font-size: 85%;
+        color: white;
+        /* no underline */
+        text-decoration: none;
+        height: 100%;
+        padding: 16px 10px;
+        border-bottom: 4px solid transparent;
+        box-sizing: border-box;
+
+        /* display: block; */
+        /* To make the text aligned center */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .NavigationItem .Nav:hover,
+    .NavigationItem .Nav:active,
+    .NavigationItem .Nav.active {
+    background-color: #BF5C2C;
+    border-bottom: 4px solid #40A4CB;
+    color: white;
+    }
+
+        .NavigationItem .Nav .Type {
+            font-size: 10px;
+            left: 50%;
+            top: 100%;
+            transform: translate(-50%, -100%);
+        }
+}
+
+@media (min-width: 768px) {
+    .NavigationItem {
+        width: 100px;
+    }
+
+    .NavigationItem .Nav .Type {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .NavigationItem .Nav .Type {
+        font-size: 12px;
+    }
+    .NavigationItem {
+        width: 100px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .NavigationItem {
+        width: 120px;
+    }
+    .NavigationItem .Nav .Type {
+        font-size: 14px;
+    }
+}

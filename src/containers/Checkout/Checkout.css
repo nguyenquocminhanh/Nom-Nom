@@ -1,0 +1,14 @@
+.Wrapper {
+    min-height: 100vh;
+    background-color: lightgrey;
+    position: relative;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+@media (max-width: 800px) {
+    .Wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+} 

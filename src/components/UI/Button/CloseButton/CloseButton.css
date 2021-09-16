@@ -1,0 +1,42 @@
+.CloseButton {
+    min-width: 25px;
+    min-height: 25px;
+    /*Make close button exceed the border of morder */
+    right: -10px;
+    top: -15px;
+    transition: transform .2s;
+
+    background-color: #ebe9e6;
+    border: 0.5px solid #000;
+    color: #000;
+
+    /*Combo make close button has expected corner position */
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}   
+ 
+.CloseButton:hover, .CloseButton:focus{
+    /* Rotate when hovering to button */
+    /* transform: rotate(45deg); */
+    background-color: #E6E6FA;
+    color: #696969;
+    transform: scale(1.05);
+    outline: none;
+}
+
+@media (min-width: 600px) {
+    .CloseButton {
+        min-width: 30px;
+        min-height: 30px;
+    }
+}
+
+@media (min-width: 768px) {
+    .CloseButton {
+        min-width: 35px;
+        min-height: 35px;
+    }
+}

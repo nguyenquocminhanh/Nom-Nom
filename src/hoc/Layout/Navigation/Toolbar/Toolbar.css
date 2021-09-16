@@ -1,0 +1,70 @@
+/* Desktop */
+.Toolbar {
+    height: 80px;
+    width: 100%;
+    /* COMBO 2: padding and box-sizing */
+    /* Inorder items inside toolbar expand full height and reach toolbar's border*/
+    padding-left: 0;
+    padding-right: 0;
+    /* Actual size height width of box includes padding and margin*/
+    box-sizing: border-box;
+
+    /*COMBO 2: position and top, left/right*/
+    /* Toolbar will stay constantly on the top even we scroll down */
+    position: fixed;
+    /* Set position of Toolbar on top */
+    top: 0;
+    left: 0;  
+
+    background-color: rgba(112, 21, 21, 0.8);
+
+    /* COMBO 3: display, justify-content, align-items
+    /* All the items in Toolbar are aligned next to each other */
+    display: flex;
+    /* All the elements wrapped in Toolbar should be
+    spread out keep distance from each other */
+    justify-content: space-between;
+    /* How all the elements inside should be aligned vertically - center */
+    align-items: center;
+
+    /* should be lower than backdrop, back drop above toolbar*/
+    z-index: 90;
+}
+
+.Toolbar nav {
+    /* height relative to toolbar's height and
+    navigation items span the full height of this toolbar*/
+    height: 100%;
+}
+
+.Name {
+    display: none;
+}
+
+/* Tablet */
+@media only screen and (max-width: 767px) {
+    .Toolbar {
+        height: 70px;
+    }
+}
+
+/* Mobile, in case there is Side Drawer, 
+Navigation Items in Toolbar will not exist anymore */ 
+@media (max-width: 500px) {
+    .Toolbar nav {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .Toolbar {
+        height: 50px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .Toolbar {
+        height: 100px;
+    }
+}
+

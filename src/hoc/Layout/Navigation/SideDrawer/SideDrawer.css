@@ -1,0 +1,49 @@
+/* Mobile */
+.SideDrawer {
+    /* cố định dù scroll up or scroll down */
+    position: fixed;
+    width: 100px;
+    /*  even on super narrow devices, it does not go over the edges*/
+    max-width: 70%;
+    /* full screen */
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    /* side draw should be above backdrop */
+    z-index: 200;
+    background-color: #701515;
+
+    padding: 25px 0px;
+    box-sizing: border-box;
+    /* react to the transform of CSS property */
+    /*open - close sidedrawer */
+    transition: transform 0.6s ease-in;
+}
+
+
+/* *********** */
+/* Desktop */
+@media (min-width: 500px) {
+    .SideDrawer {
+        /* Side Drawer is visible with device having width below 500px */
+        display: none;
+    }
+}
+
+.Open {
+    /* Shift the sideDrawer into the position defined above */
+    transform: translateX(0);
+}
+
+.Close {
+    /* Shift to the left */
+    transform: translateX(-100%);
+}
+
+
+@media (max-width: 425px) {
+    .SideDrawer {
+        width: 80px;
+    }
+}

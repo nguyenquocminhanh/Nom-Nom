@@ -1,0 +1,33 @@
+.NavItems {
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    /* ul */
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.NavItems .Icon {
+    width: 50px;
+    font-size: 150%;
+}
+
+@media (min-width: 500px) {
+    .NavItems {
+        height: 60px;
+    }
+    .NavItems .Icon {
+        font-size: 180%;
+        margin-bottom: 3px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .NavItems .Icon {
+        margin-bottom: 7px;
+    }
+}

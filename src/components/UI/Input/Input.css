@@ -1,0 +1,202 @@
+.Input {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 99%;
+}
+
+/* Height and Width of input depends on height and width of container of Input */
+.Input input {
+    height: 100%;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+}
+
+.Input input:focus {
+    outline: none;
+    border-color: #0850c4;
+    border-width: 2px !important;
+    /* background: lightgray */
+}
+
+.PlaceHolder {
+    position: absolute;
+    pointer-events: none;
+    left: 10px;
+    top: 5px;
+    transition: 0.2s ease all;
+    color: rgba(128, 119, 119, 1);
+    margin: 0;
+    padding: 0;
+}
+
+.Input input:focus ~ .PlaceHolder,
+.Input input:active ~ .PlaceHolder,
+.Input input:not(:focus):valid ~ .PlaceHolder {
+    top: -24px;
+    position: absolute;
+    opacity: 1;
+    font-weight: 700;
+    color: black;
+}
+
+.ErrorMessage {
+    color: #e32b2b;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 3px;
+}
+
+.Icon {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    right: 15px;
+    top: 8px
+}
+
+.Icon img {
+    height: 100%;
+    width: 100%;
+}
+
+.TextArea {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.TextArea textarea {
+    font-size: 15px;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    border-color: rgba(0, 0, 0, 0.8);
+    border-radius: 6px;
+}
+
+.TextArea textarea:focus {
+    outline: none;
+    border-color: #007185;
+    border-width: 1px !important;
+    box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 / 15%) inset;
+    /* background: lightgray */
+}
+
+.TextArea textarea::placeholder {
+    font-size: 13px;
+}
+
+@media (max-width: 800px) {
+    .PlaceHolder {
+        top: 6px;
+        left: 10px;
+        font-size: 16px;
+    }
+
+    .Icon {
+        height: 20px;
+        width: 20px;
+        right: 10px;
+        top: 8px
+    }
+
+    .TextArea textarea {
+        font-size: 16px;
+    }
+
+    .ErrorMessage {
+        font-size: 13px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .PlaceHolder {
+        left: 5px;
+        font-size: 15px;
+    }
+
+    .TextArea textarea {
+        font-size: 14px;
+    }
+
+    .Input input {
+        padding: 0 5px;
+        font-size: 14px;
+    }
+
+    .Icon {
+        height: 18px;
+        width: 18px;
+        right: 8px;
+    }
+}
+
+@media (max-width: 450px) {
+    .PlaceHolder {
+        left: 10px;
+        font-size: 14px;
+    }
+
+    .Input input {
+        padding: 0 10px;
+        font-size: 14px;
+    }
+    
+    .TextArea textarea {
+        font-size: 14px;
+    }
+    .ErrorMessage {
+        font-size: 12px;
+    }
+
+    .Input input:focus ~ .PlaceHolder,
+    .Input input:active ~ .PlaceHolder,
+    .Input input:not(:focus):valid ~ .PlaceHolder {
+        top: -20px;
+    }
+}
+
+@media (max-width: 375px) {
+    .PlaceHolder {
+        left: 10px;
+        font-size: 13px;
+    }
+
+    .TextArea textarea {
+        font-size: 12px;
+    }
+    .ErrorMessage {
+        font-size: 11px;
+    }
+
+    .Icon {
+        height: 17px;
+        width: 17px;
+        right: 12px;
+    }
+
+    .Input input {
+        font-size: 13px;
+    }
+
+    .Input input:focus ~ .PlaceHolder,
+    .Input input:active ~ .PlaceHolder,
+    .Input input:not(:focus):valid ~ .PlaceHolder {
+        top: -18px;
+    }
+}
+
+@media (max-width: 320px) {
+    .Input input:focus ~ .PlaceHolder,
+    .Input input:active ~ .PlaceHolder,
+    .Input input:not(:focus):valid ~ .PlaceHolder {
+        top: -15px;
+    }
+}

@@ -1,0 +1,112 @@
+.CarouselWrap {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 300px;
+    margin: auto;
+    padding: 0 40px;
+    position: relative;
+}
+
+.Carousel {
+    width: 100%;
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.Prev, .Next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer
+}
+
+.Prev {
+    left: 8px;
+    padding: 0 3px;
+}
+
+.Next {
+    right: 8px;
+    padding: 0 3px;
+}
+
+.Card {
+    min-width: 25%;
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 1px;
+    border: 3px solid #eee;
+    position: relative;
+    cursor: pointer;
+}
+
+.Card img {
+    border-radius: 3px;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.OverLay {
+    position: absolute;
+    font-size: 18px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* hidden or show*/
+    visibility: hidden;
+    opacity: 0;
+}
+
+.Card:hover > .OverLay {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+@media (max-width: 800px) {
+    .Card {
+        min-width: 50%;
+    }
+
+    .Prev {
+        left: 7px;
+    }
+    
+    .Next {
+        right: 7px;
+    }
+    .OverLay {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+    .Card {
+        min-width: 100%;
+    }
+
+    .Prev {
+        left: 3px
+    }
+    
+    .Next {
+        right: 3px
+    }
+    .OverLay {
+        font-size: 13px;
+    }
+}
+

@@ -1,0 +1,69 @@
+.TrackingContainer {
+    height: auto;
+    width: auto;
+    margin: 16px 25px;
+}
+
+.Title {
+    font-size: 20px;
+    color: #000;
+    line-height: 26px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.OrderNumber {
+    cursor: pointer;
+    color: #007185;
+}
+
+.OrderNumber:hover {
+    color: #C7511F;
+    text-decoration: underline;
+}
+
+.ArrowDown {
+    height: 100%;
+    top: 15px
+}
+
+.Popover {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    background-color: #e6e8d8;
+    padding: 14px 18px;
+    padding-bottom: 8px;
+    transform: translate(0%,-50%);
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    height: auto;
+    width: auto;
+    border-color: rgba(0,0,0,.2);
+    border-radius: 4px;
+}
+
+.OrderNumber:hover + .Popover {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    /* transform: translate(-25%, 25%); */
+    transition: 1s ease all;
+}
+
+.PopoverContent li {
+    white-space: nowrap;
+    color: #000;
+    margin-bottom: 5px;
+    font-size: 15px;
+    /* word-spacing: 3px; */
+}
+
+.AddressTitle {
+    color: #002F36;
+    margin-bottom: 10px;
+    font-size: 17px;
+    white-space: nowrap;
+}

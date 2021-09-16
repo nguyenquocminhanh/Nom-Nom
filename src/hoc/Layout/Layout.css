@@ -1,0 +1,29 @@
+/* Mobile */
+.Content {
+    /* Distance of Toolbar */
+    margin-top:50px;
+    background-color: #F5F3F1;
+    /* IMPORTANT!!! */
+    height: 100%;
+}
+
+@media only screen and (min-width: 426px) {
+    .Content {
+        margin-top: 70px;
+    } 
+}
+
+/* tablet & desktop */
+@media only screen and (min-width: 768px) {
+    .Content {
+        margin-top: 80px;
+        /* padding: 10px */
+    } 
+}
+
+@media only screen and (min-width: 1440px) {
+    .Content {
+        margin-top: 100px;
+        /* padding: 10px */
+    } 
+}

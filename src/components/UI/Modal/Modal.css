@@ -1,0 +1,53 @@
+/* Apply for devices below 600px */
+.Modal {
+    /* Modal should stay in position even as we scoll */
+    position: fixed;        /* create fixed porsion modal */
+    /* An element with greater stack order is always
+    in front of an element with a lower stack order. */
+    z-index: 500;      
+    background-color: #ebe9e6;
+/* width is only 85%, constant - can not automatic adjustable when size down */
+    width: 85%; 
+ 
+    border: 1px solid #ccc;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+    padding: 16px;
+    /* Distance compared with very left border of next element */
+    left: 50%;
+    /* Distance compared with very left border of next element */
+    top: 50%;
+    /* If you set box-sizing: border-box; on an element,
+    padding and border are included in the width and height */
+    box-sizing: border-box;
+    /* change property values smoothly, over a given duration */
+    /* trượt lên xuống */
+    transition: all 0.4s ease-out;
+    display: block;
+} 
+
+@media (min-width: 600px) {
+    .Modal {
+        width: 70%;
+        padding: 25px 16px;
+    }   
+}
+
+/* @media (min-width: 768px) {
+    .Modal {
+        height: auto;
+        width: 500px;
+        left: calc(50% - 250px)
+    }   
+} */
+
+@media (min-width: 768px) {
+    .Modal {
+        height: auto;
+        width: auto;
+        /* left: calc(50% - 200px) */
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+}

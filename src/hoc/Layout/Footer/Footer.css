@@ -1,0 +1,354 @@
+.Footer {
+    position: relative;
+    background-color: rgba(112, 21, 21, 1);
+    /* padding: auto; */
+    box-sizing: border-box;
+    margin: auto;
+    padding: auto;
+    overflow: hidden;
+    font-family: 'Roboto, sans-serif';
+}
+
+.Footer .Content {
+    position: absolute;
+    z-index: 1;
+    font-family: 'Roboto, sans-serif';
+    font-size: 13px;
+    color: #F5F3F1;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    padding: 0 5px;
+    opacity: 1;
+    content: "";
+    display: table;
+}
+
+.Links, .About, .Contact, .Follow {
+    float: left;
+    padding: 5px 5px;
+    height: auto;
+}
+
+.ContactInfo, .LinksInfo, .AboutInfo {
+    text-transform: none;
+    margin: 10px 0;
+}
+
+.AboutInfo {
+    padding-right: 6px;
+}
+
+.About {
+    width: 40%;
+    text-align: justify;
+}
+
+.Links {
+    width: 17%;
+} 
+
+.Contact {
+    width: 30%;
+}
+
+.Follow {
+    width: 13%;
+    text-align: center;
+}
+
+.Footer img {
+    /* image auto resize */
+    width: 100%;
+    height: 300px;
+    opacity: 0.4;
+    /* max-width: 1000px; */
+    /* The key is to use height:auto to override any height=”…” attribute already present on the image */
+}
+
+.Footer .CopyRight p{
+    font-size: 11px;
+    color: #F5F3F1;
+    text-align: center;
+    margin: 4px 0;
+}
+
+.Follow p {
+    margin: 8px 0;
+}
+
+.Footer .Type {
+    font-style: italic;
+    font-weight: 800;
+    font-size: 15px;
+    margin: 6px 0;
+}
+
+.FaceBook, .Messenger, .Instagram, .Twitter {
+    cursor: pointer;
+    font-size: 17px; 
+    margin: 4px 0;
+}
+
+.FaceBook:hover, .Messenger:hover, .Instagram:hover, .Twitter:hover {
+    outline: none;
+    transition: all 0.5s;
+    transform: rotate(360deg)
+}
+
+.FaceBook:hover {
+    color: #3B5998;
+}
+
+.Messenger:hover {
+    color: #CC0099
+}
+
+.Instagram:hover {
+    color: #FF5050
+}
+
+.Twitter:hover {
+    color: #0099FF;
+}
+
+.FaceBook, .Messenger, .Instagram, .Twitter:focus {
+    outline: none;
+    border: none;
+}
+
+.Highlight{
+    cursor: pointer;  
+    display:inline-block;
+    text-decoration: none;
+}
+
+.Highlight:hover {
+    color: #66FF66;
+}
+
+.Highlight:after {
+    display:block;
+    content: '';
+    border-bottom: solid 1px #66FF66; 
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;     
+}
+
+.Highlight:hover:after { transform: scaleX(1)}
+
+.Footer a {
+    color: inherit
+}
+
+.Footer a:hover {
+    color: #66FF66;
+}
+
+.Footer .Content .About .Type img {
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+}
+
+@media (min-width: 375px) {
+    .Footer .CopyRight p{
+        font-size: 13px;
+        margin: 5px 0;
+    }
+
+    .Footer img {
+        height: 320px;
+    }
+
+    .Footer .Content .ContactInfo, .Footer .Content .LinksInfo, .Footer .Content .AboutInfo{
+        margin: 10px 0;
+    }
+
+    .Footer .Type {
+        margin: 7px 0;
+        margin-top: 10px;
+        font-size: 16px;
+    }
+
+    .FaceBook, .Messenger, .Instagram, .Twitter {
+        font-size: 20px; 
+        margin: 5px 0;
+    }
+
+    .Footer .Content .About .Type img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .Links {
+        width: 17%;
+    } 
+    
+    .Contact {
+        width: 35%;
+    }
+
+    .About {
+        width: 35%;
+    }
+
+    .Follow {
+        width: 13%;
+    }
+
+    .Follow, .Contact, .Links {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 410px) {
+    .Footer img {
+        height: 350px;
+    }
+
+    .Footer .CopyRight p{
+        font-size: 13px;
+        margin: 8px 0;
+    }
+
+    .Footer .Content .ContactInfo, .Footer .Content .LinksInfo, .Footer .Content .AboutInfo {
+        margin: 13px 0;
+    }
+
+    .Footer .Content .About .Type img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .AboutInfo, .LinksInfo, .ContactInfo {
+        font-size: 14px;
+    }
+
+    .Footer .Type {
+        margin: 10px 0;
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 1000;
+    }
+
+    .FaceBook, .Messenger, .Instagram, .Twitter {
+        font-size: 22px; 
+        margin: 5px 0;
+    }
+
+    .About {
+        width: 32%;
+    }
+
+    .Follow {
+        width: 13%;
+    }
+
+
+    .Follow, .Contact, .Links {
+        margin-top: 25px;
+    }
+}
+
+@media (min-width: 768px) {
+    .Footer .Content .About .Type img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .Footer img {
+        height: 350px;
+    }
+    
+    .Footer .Content .ContactInfo, .Footer .Content .LinksInfo, .Footer .Content .AboutInfo {
+        font-size: 16px;
+        margin: 15px 0;
+    }
+
+    .Footer .CopyRight p{
+        font-size: 15px;
+        margin: 8px 0;
+    }
+
+    .About {
+        width: 35%;
+    }
+
+    .Links {
+        width: 25%;
+    } 
+
+    .Contact {
+        width: 25%;
+    }
+    
+    .Follow {
+        width: 15%;
+        text-align: center;
+    }
+
+    .Footer .Type {
+        font-size: 25px;
+        margin: 18px 0;
+        margin-top: 23px;
+    }
+
+    .FaceBook, .Messenger, .Instagram, .Twitter {
+        font-size: 27px; 
+        margin: 5px 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .Footer img {
+        height: 330px;
+    }
+
+    .Footer .CopyRight p{
+        font-size: 16px;
+    }
+
+    .Footer .Content {
+        padding-left: 20px;
+    }
+
+    .Footer .Type {
+        font-size: 25px;
+    }
+
+    .FaceBook, .Messenger, .Instagram, .Twitter {
+        font-size: 28px;
+        /* margin: 2px 0; */
+    }
+
+    .Footer .Content .ContactInfo, .Footer .Content .LinksInfo, .Footer .Content .AboutInfo {
+        font-size: 17px;
+    }
+
+    .About .Type {
+        margin: 10px 0;
+    }
+
+    .AboutInfo {
+        margin: 10px 0;
+        padding-right: 40px;
+        line-height: 25px;
+    }
+
+    .Footer .Content .About .Type img {
+        width: 80px;
+        height: 80px;
+        opacity: 1;
+    }
+
+    .Follow, .Contact, .Links {
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .ContactInfo, .LinksInfo, .AboutInfo {
+        font-size: 20px;
+    }
+}

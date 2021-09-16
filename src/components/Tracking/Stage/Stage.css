@@ -1,0 +1,89 @@
+.StageContainer {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+
+.Process {
+    width: 26px;
+    height: 100%;
+    min-height: 7rem;
+    /* display: inline-block; */
+    float: left;
+    position: relative;
+    /* overflow: visible; */
+}
+
+.Bar {
+    height: 100%;
+    z-index: 0;
+    width: 4px;
+    position: absolute;
+    top: 0;
+    left: 11px;
+}
+
+.BarBackground {
+    height: 100%;
+    /* z-index: 0; */
+    background-image: linear-gradient(lightgray 55%,rgba(255,255,255,0) 0);
+    background-position: right;
+    background-size: 10px 20px;
+    background-repeat: repeat-y;
+    width: 4px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.BarForeground {
+    position: absolute;
+    /* z-index: 1; */
+    height: 92%;
+    overflow: hidden;
+    width: 4px;
+    top: 0;
+    left: 0px;
+    background-color: #4DC2B4;
+}
+
+.CheckBox {
+    z-index: 1;
+    height: 26px;
+    width: 26px;
+    /* background-color: #4DC2B4;
+    border: 3px solid #4DC2B4; */
+    background-color: #fff;
+    border: 3px solid lightgray;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.Icon {
+    width: 17px;
+    height: 13px;
+    top: 4px;
+    left: 1px;
+    position: absolute;
+    background-image: url(https://m.media-amazon.com/images/G/01/x-locale/cs/ship-track/pt2/milestone_checkmark_2x._V516143779_.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+}
+
+.StatusContainer {
+    height: 100%;
+    min-height: 7rem;
+    padding-left: 10px;
+    /* display: inline-block; */
+    float: left;
+    position: relative;
+    /* overflow: visible; */
+}
+
+.Status {
+    font-size: 17px;
+    color: #6C7778;
+    line-height: 26px;
+}
+

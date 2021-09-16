@@ -1,0 +1,93 @@
+.Security {
+    height: 100%;
+    padding: 5px 10px;
+    background-color: khaki;
+
+    /* Xếp theo chiều dọc */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
+}
+
+.Security h3 {
+    text-transform: uppercase;
+}
+
+.Security .DeleteAccount .DeleteAccountForm {
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Password {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 15px 0px;
+    width: auto;
+}
+
+.Password input {
+    margin-top: 8px;
+    height: 30px;
+    width: 200px;
+}
+
+.Password input[type=password] {
+    font-size: 13px;
+}
+
+.Invalid {
+    border: 1px solid red;
+    background-color: #FDA49A;
+}
+
+.SubmitButton {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.SubmitButton button {
+    text-transform: uppercase;
+    font-size: 15px;
+    padding: 10px 15px;
+    background-color: white;
+    color: red;
+    text-align: center;
+    cursor: pointer;
+    border: solid 2px red;
+    border-radius: 10px;
+}
+
+.SubmitButton .button:hover {
+    background-color: red
+}
+
+.SubmitButton button:active {
+    background-color: white;
+  }
+
+.SubmitButton button:disabled {
+    cursor: not-allowed;
+    color: #666666;
+    background-color: #cccccc;
+    border: solid 2px grey;
+}
+
+.InformationBox {
+    width: auto;
+    height: 15px;
+    padding: 5px 10px;
+    background-color: lightskyblue;
+}
+
+@media (min-width: 500px) {
+    .Security .DeleteAccount h3 {
+        font-size: 150%;
+    }
+} 

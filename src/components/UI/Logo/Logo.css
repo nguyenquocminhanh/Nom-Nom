@@ -1,0 +1,63 @@
+/* Desktop Devices */
+.Logo {
+    /* height expand to full height of toolbar*/
+    height: 100%;
+    border-radius: 5px;
+    background-color: #BF5C2C;
+    padding: 5px;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.Logo img {
+    height: 70px; 
+}
+
+
+/* Mobile Devices */
+@media only screen and (max-width: 767px) {
+    .Logo {
+        height: 70px;
+    }
+
+    .Logo img {
+        height: 60px;
+    }
+}
+
+/* Mobile Devices with Side Drawer */
+@media only screen and (max-width: 500px) {
+    .Logo {
+        height: 70px;
+        /* margin-bottom: 30px; */
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .Logo img {
+        height: 60px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .Logo {
+        height: 50px;
+        /* margin-bottom: 30px; */
+    }
+
+    .Logo img {
+        height: 40px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .Logo {
+        height: 100px;
+    }
+
+    .Logo img {
+        height: 90px;
+    }
+}

@@ -1,0 +1,79 @@
+.OrderDetails {
+    height: auto;
+    padding: 15px 18px;
+    border: 1px #D5D9D9 solid;
+    border-radius: 0 0 8px 8px;
+    background-color: #fff;
+}
+
+.OrderDetails .Title {
+    color: #0F1111;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+}
+
+.DetailsContent {
+    height: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+/* .ShippingAddress,
+.PaymentMethod, 
+.OrderSummary {
+    background-color: violet;
+} */
+
+.Head {
+    color: #0F1111;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.DeliveryOption p {
+    display: flex;
+    align-items: center;
+}
+
+.ShippingAddressList li,
+.OrderSummaryList li {
+    white-space: nowrap;
+    color: #000;
+    margin-bottom: 10px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.PricePerDish,
+.TotalPrice {
+    max-width: 75%;
+}
+
+/* .PricePerDish .DishLabel {
+    display: inline;
+    float: left;
+} */
+
+.PricePerDish .DishPrice,
+.Price {
+    float: right;
+}
+
+.TotalPriceTitle,
+.Price {
+    color: #0F1111;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+@media (min-width: 500px) {
+
+}

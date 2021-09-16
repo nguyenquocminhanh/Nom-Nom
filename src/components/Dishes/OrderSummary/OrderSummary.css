@@ -1,0 +1,107 @@
+.OrderSummaryWrap {
+    box-sizing: 0;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    padding-top: 10px;
+    display: grid;
+    grid-template-columns: 0.65fr 0.35fr;
+    grid-template-rows: repeat(3, 100px);
+}
+
+.OrderSummary {
+    grid-row: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.OrderSummary p{
+    color: rgba(0, 0, 0, 0.9);
+    font-size: 16px;
+}
+
+.NumericInput {
+    display: block;
+    width: 75px;
+    height: 23px;
+}
+
+.NumericInput:focus {
+    outline: none;
+}
+.OrderSummaryImage {
+    grid-row: span 2;
+}
+
+.OrderSummaryImage img {
+    height: 100%;
+    width: 100%;
+}
+
+.OrderSummaryButtons {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {    
+    .NumericInput {
+        width: 85px
+    }
+
+    .OrderSummary h2 {
+        margin: 13px 0;
+        line-height: 15px;
+        font-size: 19px;
+    }
+
+    .OrderSummaryButtons {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .OrderSummaryWrap {
+        grid-template-rows: repeat(3, 75px);
+    }
+
+    .OrderSummary h2 {
+        margin: 10px 0;
+        line-height: 15px;
+        font-size: 17px;
+    }
+
+    .OrderSummary p{
+        font-size: 15px;
+        margin: 10px 0px;
+    }
+
+    .NumericInput {
+        width: 90px;
+        height: 18px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .OrderSummaryWrap {
+        grid-template-rows: repeat(3, 70px);
+    }
+
+    .OrderSummary h2 {
+        margin: 5px 0;
+        line-height: 13px;
+        font-size: 15px;
+    }
+
+    .OrderSummary p{
+        font-size: 13px;
+    }
+
+    .NumericInput {
+        width: 75px;
+        height: 15px;
+    }
+}

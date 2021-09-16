@@ -1,0 +1,184 @@
+.ReceiptWrapper {
+    background-color: #ebe9e6;
+    
+    width: 100%;
+    height: 100%;
+     
+    padding: 5px 10px;
+    /* auto resize width when change the width of screen */
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    /* border: px solid #ebedee; */
+    
+}
+
+.StickyDiv {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 120px;
+    padding: 0;
+    margin: 0;
+}
+
+.Receipt {
+    border-radius: 8px;
+    border: 2px solid rgba(112, 21, 21, 0.7);
+    padding: 30px 5px;
+    margin-bottom: 25px;
+    /* stick to the middle of Order Summary */
+}
+
+.Receipt .Title {
+    text-align: center; 
+    font-size: 35px;
+    margin-bottom: 20px
+}
+
+.Receipt .Title p {
+    color: #701515;
+    padding: 0;
+    margin: 0;
+    font-family: 'Souvenir,Cooper,serif';
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.Receipt .TotalPrice {
+    margin-top: 5px;
+    border-top: solid 1.5px grey;;
+    padding: 10px 20px;
+    height: 45px;
+    font-size: 24px;
+}
+
+.Receipt .Description {
+    float: left;
+    padding: 0;
+}
+
+.Receipt .Price {
+    float: right;
+    padding: 0;
+}
+
+.Line {
+    height: auto
+
+}
+
+.Line p {
+    margin: 0;
+    padding: 0;
+}
+
+.Instruction {
+    height: auto;
+    padding: 10px;
+    border: 2px solid rgba(112, 21, 21, 0.7);
+    border-radius: 8px;
+    position: relative;
+}
+
+@media (max-width: 1400px) {
+    .StickyDiv {
+        top: 100px
+    }
+}
+
+@media (max-width: 800px) {
+    .ReceiptWrapper {
+        padding: 0px 0px;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .StickyDiv {
+        padding: 5px 20px;
+        padding-top: 15px;
+        display: grid;
+        grid-template-columns: 1fr 0.6fr;
+    }
+
+    .Receipt {
+        margin: 0
+    }
+
+    .Instruction {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: none;
+    }
+
+    .Receipt .TotalPrice{
+        font-size: 20px;
+    }
+
+    .Receipt .Title {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .StickyDiv {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .Receipt {
+        padding: 20px 5px;
+    }
+
+    .Receipt .Title p{
+        font-size: 24px;
+    }
+
+    .ReceiptWrapper .Receipt .TotalPrice{
+        font-size: 18px;
+        height: 26px;
+    }
+}
+
+@media (max-width: 450px) {
+    .StickyDiv {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .Receipt .Title p{
+        font-size: 18px;
+    }
+
+    .ReceiptWrapper .Receipt .TotalPrice{
+        height: 18px;
+        padding: 8px 7px
+    }
+
+    .Receipt .Description,
+    .Receipt .Price {
+        font-size: 17px;
+    }
+
+    .Instruction {
+        padding: 3px;
+    }
+}
+
+@media (max-width: 375px) {
+    .Receipt {
+        padding: 10px 5px;
+    }
+
+    .ReceiptWrapper .Receipt .TotalPrice{
+        height: 15px;
+    }
+
+    .Receipt .Description,
+    .Receipt .Price {
+        font-size: 16px;
+    }
+}

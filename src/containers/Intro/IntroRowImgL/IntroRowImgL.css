@@ -1,0 +1,98 @@
+.IntroRowImgLWrap {
+    box-sizing: border-box;
+    display: block;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+.IntroRow {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /* IMPORTANT */
+    flex-direction: column-reverse;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.LeftColumnWrap {
+    align-self: stretch;
+    /* IMPORTANT */
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.LeftColumn {
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.NonBreakingSpace p {
+    margin: 0px;
+}
+
+.RightColumnWrap {
+    align-self: stretch;
+    /* IMPORTANT */
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.RightColumn {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.Dots {
+    position: absolute;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.Dot {
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 8px 6px;
+    background-color: rgba(245, 240, 237, 0.3);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.Active, .Dot:hover {
+    background-color:  rgba(245, 240, 237, 0.9);;
+}
+
+@media (min-width: 768px) {
+    .IntroRow {
+        flex-direction: row;
+    }
+    
+    .LeftColumnWrap {
+        width: 50%;
+    }
+    
+    .RightColumnWrap {
+        width: 50%;
+    }
+
+    .Dot {
+        height: 12px;
+        width: 12px;
+        margin: 12px 10px;
+    }
+}

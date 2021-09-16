@@ -1,0 +1,354 @@
+.SignInWrapper {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.SignInWrapper .SignInBackground {
+    min-height: 100vh;
+    z-index: 0;
+    background-image: url('../../../assets/Images/Intro/authenticate_background.jpg');
+    background-size: 100% 100%;
+    /* background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;  */
+    /* filter: blur(0.5px); */
+}
+
+.SignInWrapper .SignIn {
+    /* background-color: cadetblue; */
+    z-index: 1;
+    background: #ebe9e6;
+    width: 30%;
+    height: auto;
+    position: absolute;
+    padding: 15px 25px;
+    transform: translate(-10%,-25%);
+    top: 25%;
+    left: 10%;
+    border: 2px solid rgba(112, 21, 21, 0.7);
+    border-radius: 15px;
+    box-shadow: -10px 10px 7px rgba(112, 21, 21, 0.7);
+}
+
+.Title p {
+    color: #701515;
+    padding: 0;
+    margin: 0;
+    font-family: 'Souvenir,Cooper,serif';
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.SignIn .Form {
+    margin-top: 30px;
+    display: grid;
+    grid-template-rows: 120px 50px 30px 50px 30px;
+    grid-row-gap: 20px;
+}
+
+.Inputs {
+    margin-top: 10px;
+    display: grid;
+    grid-auto-rows: 40px;
+    grid-row-gap: 45px;
+}
+
+/* .Inputtext {
+    margin-top: 25px;
+    width: 100%; 
+    margin-bottom: 10px; 
+    background: rgb(255, 255, 255), rgb(59, 59, 59);
+    outline: none;
+    padding: 10px;
+    font-size: 15px;;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    transition: box-shadow .5s ease;
+} */
+
+/* .Invalid {
+    border: 1px solid red;
+    background-color: #FDA49A;
+} */
+
+.Highlight {
+    color: #007c8a;
+    font-weight: 600;
+    cursor: pointer;  
+    display:inline-block;
+    text-decoration: none;
+}
+
+.Highlight:hover {
+    color: #007c8a;
+}
+
+.Highlight:after {
+    display:block;
+    content: '';
+    border-bottom: solid 1px #007c8a;
+    transform: scaleX(0);  
+    transition: transform 250ms ease-in-out;     
+}
+
+.Highlight:hover:after { transform: scaleX(1)}
+
+.ErrorMessage {
+    font-size: 14px;
+    color: red;
+    margin: 1px 1px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+/* .Inputtext:focus { 
+    outline: none;
+    border-color: #0850c4;
+    border-width: 2px !important;
+} */
+
+/* .SignInWrapper .SignIn .Text {
+    margin-top: 25px;
+    text-align: center;
+    color: lightsteelblue;
+    font-weight: 600;
+} */
+
+/* Button */
+
+.ShowPassword {
+    display: flex;
+    align-items: center;
+    margin-top: 26px;
+    /* justify-content: center; */
+}
+
+.ShowPassword span {
+    margin-left: 10px;
+}
+/* 
+.SignInWrapper .SignIn .Button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.SignInWrapper .SignIn .ButtonWrapper button {
+    background-color: #4a77d4;
+    /* trộn màu */
+    background-image: linear-gradient(top, #6eb6de, #4a77d4);
+    background-repeat: repeat-x;
+    border: 1px solid #3762bc; 
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.4); 
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    width: 100%;
+    /* background-color: #4a77d4;  */
+    padding: 9px 14px; 
+    font-size: 15px; 
+    line-height: normal;
+    border-radius: 5px; 
+    text-align: center;
+    vertical-align: middle;
+}
+
+.SignInWrapper .SignIn .ButtonWrapper button:hover { 
+    filter: none;
+    background-color: #4a77d4;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    /* đổi vị trí màu */ /* Combo dùng chung với linear-gradient */
+    background-position: 0 -15px;
+    text-decoration: none;
+    outline: none;
+}
+
+.SignInWrapper .SignIn .ButtonWrapper button:disabled,
+.SignInWrapper .SignIn .ButtonWrapper button[disabled] {
+    cursor: not-allowed;
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    box-shadow: none;
+    text-shadow: none;
+    background-repeat: no-repeat;
+    background-image: none;
+}
+
+.NoAccount {
+    display: flex;
+}
+
+@media (max-width: 1024px) {
+    .SignInWrapper .SignIn {
+        width: 400px;
+        height: auto;
+        transform: translate(-50%,-25%);
+        top: 25%;
+        left: 50%;
+    }
+
+    .Title p {
+        font-size: 32px;
+    }
+    
+    .SignInWrapper .SignIn .ButtonWrapper button,
+    .Highlight,
+    .NoAccount,
+    .ResetPassword,
+    .ShowPassword {
+        font-size: 17px;
+    }
+
+    .ResetPassword {
+        display: flex;
+        align-items: center;
+    }
+
+    .Inputs {
+        grid-row-gap: 46px;
+    }
+
+    .ShowPassword {
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 768px) {
+    .SignInWrapper .SignInBackground,
+    .SignInWrapper {
+        min-height: 100vh;
+    }
+
+    .SignInWrapper .SignIn {
+        width: 350px;
+        padding: 20px 25px;
+    }
+
+    .Title p {
+        font-size: 28px;
+    }
+
+    .SignIn .Form {
+        margin-top: 30px;
+        grid-template-rows: 113px 35px 35px 35px 35px;
+        /* grid-row-gap: 30px; */
+    }
+
+    .Inputs {
+        margin-top: 10px;
+        display: grid;
+        grid-auto-rows: 35px;
+        grid-row-gap: 43px;
+    }
+
+    .SignInWrapper .SignIn .ButtonWrapper button,
+    .Highlight,
+    .NoAccount,
+    .ResetPassword,
+    .ShowPassword {
+        font-size: 16px;
+    }
+
+    .SignInWrapper .SignIn .ButtonWrapper {
+        height: 35px;
+    }
+
+    .ShowPassword {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .SignInWrapper .SignIn {
+        width: 320px;
+        padding: 15px 15px;
+        transform: translate(-50%,-30%);
+        top: 30%;
+        left: 50%;
+    }
+
+    .Title p {
+        font-size: 24px;
+    }
+
+    .SignIn .Form {
+        margin-top: 29px;
+        grid-template-rows: 96px 29px 29px 29px 29px;
+        grid-row-gap: 25px;
+    }
+
+    .Inputs {
+        margin-top: 5px;
+        grid-auto-rows: 29px;
+        grid-row-gap: 38px;
+    }
+
+    .SignInWrapper .SignIn .ButtonWrapper button,
+    .SignInWrapper .SignIn .ButtonWrapper,
+    .Highlight,
+    .NoAccount,
+    .ResetPassword,
+    .ShowPassword {
+        font-size: 15px;
+    }
+
+    .SignInWrapper .SignIn .ButtonWrapper {
+        height: 29px;
+    }
+
+    .ShowPassword {
+        margin-top: 14px;
+    }
+}
+
+@media (max-width: 375px) { 
+    .SignInWrapper .SignIn {
+        width: 310px;
+        padding: 17px 17px;
+    }
+
+    .SignIn .Form {
+        margin-top: 20px;
+        grid-row-gap: 22px;
+    }
+
+    .Inputs {
+        grid-row-gap: 33px;
+    }
+
+    .SignInWrapper .SignIn .ButtonWrapper button,
+    .SignInWrapper .SignIn .ButtonWrapper,
+    .Highlight,
+    .NoAccount,
+    .ResetPassword,
+    .ShowPassword {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 320px) {
+    .SignInWrapper .SignIn {
+        width: 270px;
+        padding: 12px 12px;
+    }
+
+    .Title p {
+        font-size: 20px;
+    }
+
+    .Highlight {
+        font-size: 14px;
+    }
+
+    .SignIn .Form {
+        grid-row-gap: 20px;
+    }
+
+    .ShowPassword {
+        margin-top: 10px;
+    }
+}

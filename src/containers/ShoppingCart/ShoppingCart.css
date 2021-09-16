@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+.ShoppingCartWrapper {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    font-family: 'Souvenir,Cooper,serif';
+    background-color: #ebe9e6;
+}
+
+.ShoppingCartWrapper .ShoppingCart {
+    background-color: #ebe9e6;
+    width: 100%;
+    margin: 0;
+    /* Title and Items are flex column */
+    display: flex;
+    flex-direction: column;
+    border-right: 2px solid rgba(112, 21, 21, 0.5);
+}
+
+/* TITLE */
+.ShoppingCartWrapper .ShoppingCart .Title,
+.ShoppingCartWrapper .TotalPrice .Title {
+    height: 100px;
+    /* Border Bottom for Div Title */
+    border-bottom: 2px solid rgba(112, 21, 21, 0.5);
+    padding: 30px 30px;
+    padding-right: 0px;
+    display: flex;
+}
+
+.ShoppingCartWrapper .ShoppingCart .Title p,
+.ShoppingCartWrapper .TotalPrice .Title p {
+    color: #701515;
+    text-shadow: 0 0 3px rgba(112, 21, 21, 0.5);
+    font-size: 40px;
+    line-height: 40px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* CHECK EMPTY */
+.ShoppingCartWrapper .ShoppingCart .Empty {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    color: rgba(112, 21, 21, 0.4);
+    font-size: 30px;
+    font-weight: 300;
+}
+
+/* Total Price */
+.ShoppingCartWrapper .TotalPrice {
+    background-color: #ebe9e6;
+    padding-bottom: 50px;
+}
+
+.ShoppingCartWrapper .TotalPrice .Price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px 0;
+    /* justify-content: center; */
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 30px
+}
+
+.ShoppingCartWrapper .TotalPrice .Buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 150px;
+    /* justify-content: space-between; */
+}
+
+.Buttons span {
+    font-size: 22px;
+    text-transform: none;
+}
+
+.Buttons p {
+    margin: 0;
+}
+
+@media (max-width: 1024px) {
+    .ShoppingCartWrapper .TotalPrice {
+        min-height: 70vh;
+    }
+
+    .ShoppingCartWrapper .TotalPrice .Price {
+        font-size: 25px
+    }
+}
+
+@media (max-width: 800px) {
+    .ShoppingCartWrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ShoppingCartWrapper .ShoppingCart {
+        width: 100%;
+        height: auto;
+        min-height: 400px;
+        overflow: hidden;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .ShoppingCartWrapper .ShoppingCart .Title {
+        border-bottom: none;
+    }
+
+    .ShoppingCartWrapper .TotalPrice .Title {
+        border-top: 3px solid rgba(112, 21, 21, 0.5);
+        border-bottom: none;
+    }
+
+    .ShoppingCartWrapper .ShoppingCart .Title p,
+    .ShoppingCartWrapper .TotalPrice .Title p{
+        font-size: 25px;
+        height: 25px;
+    }
+    
+    .ShoppingCartWrapper .ShoppingCart .Empty {
+        font-size: 23px;
+    }
+
+    .Buttons span {
+        font-size: 20px;
+        text-transform: none;
+    }
+
+    .Empty {
+        margin-top: 100px;
+    }
+}  
+
+@media (max-width: 500px) {
+    .ShoppingCartWrapper .TotalPrice .Price {
+        font-size: 20px
+    }
+
+    .ShoppingCartWrapper .ShoppingCart .Title {
+        padding-bottom: 0px;
+        height: 75px;
+    }
+
+    .Buttons span {
+        font-size: 16px;
+        text-transform: none;
+    }
+}
+
+@media (max-width: 375px) {
+    .ShoppingCart .TotalPrice {
+        padding-bottom: 0;
+    }
+}

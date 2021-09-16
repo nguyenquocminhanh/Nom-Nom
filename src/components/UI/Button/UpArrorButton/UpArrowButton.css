@@ -1,0 +1,100 @@
+.UpArrowButton {
+    /* text decoration */
+    color: rgba(245, 243, 241, 0.8);
+    text-align: center;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-family: Souvenir,Cooper,serif;
+    border: none;
+    /* căn giữa text trên dưới */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* position */
+    padding: 0 10px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transform: translate(0, 0);
+    /* vị trí translate(0, 0) -> margin điều chỉnh chút cho dễ */
+    margin-right: 30px;
+    margin-bottom: 20px;
+
+    /* nằm đè trên các element khác */
+    z-index: 2;
+    
+    overflow: hidden;
+    
+    /* hình tròn */
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: rgba(112, 21, 21, 0.8);
+    cursor: pointer;
+    /* đổi màu khi hover */
+    box-shadow: inset 0 0 0 4px rgba(112, 21, 21, 0.8);
+    -webkit-transition: all 1.5s ease-out;
+
+    /* animation up-down */
+    animation: up-down 4s infinite ease-in-out;
+}
+
+.UpArrowButton:hover {
+    /* đổi màu khi hover */
+    color: rgba(112, 21, 21, 0.8);
+    box-shadow: inset 400px 0 0 0 rgba(245, 243, 241, 0.6);
+
+    /* ngưng animation khi hover */
+    animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+}
+
+/* không bị hiện cái viền khi nhấn vào */
+.UpArrowButton:focus {outline:none;} ::-moz-focus-inner {border:0}
+
+@-webkit-keyframes up-down {
+    0% { transform: translateY(0) }
+
+    50% { transform: translateY(-15px) }
+
+    100% { transform: translate(0);}
+}
+@keyframes up-down {
+    0% { transform: translateY(0) }
+
+    50% { transform: translateY(-15px) }
+
+    100% { transform: translate(0)}
+}
+
+
+@media (max-width: 430px) {
+    .UpArrowButton {
+        font-size: 15px;
+        width: 70px;
+        height: 70px;
+        margin-right: 15px;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 375px) {
+    .UpArrowButton {
+        font-size: 14px;
+        width: 65px;
+        height: 65px;
+        margin-right: 15px;
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .UpArrowButton {
+        font-size: 12px;
+        width: 55px;
+        height: 55px;
+        margin-right: 13px;
+        margin-bottom: 10px;
+    }
+}

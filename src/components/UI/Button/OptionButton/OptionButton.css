@@ -1,0 +1,62 @@
+.OptionButton {
+    background: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    border-color: #D5D9D9;
+    border-style: solid;
+    border-width: 2px;
+    cursor: pointer;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 10px!important;
+    color: #0F1111;
+    font-size: 14px;
+    line-height: 20px;
+    height: 25px;
+    outline: 0;
+    width: 100%;
+}
+
+.OptionButton:hover,
+.OptionButton:active {
+    outline: 0;
+    background-color: #c3e9eb;
+    color: #0F1111;
+    border-color: #008296;
+}
+
+.IsClicked {
+    outline: 0;
+    background-color: #c3e9eb;
+    border-color: #008296;
+    color: #0F1111;
+}
+
+.Disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    border: 1px solid #999999;
+    border-radius: 8px;
+    color: #666666;
+}
+
+.Disabled:hover {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed
+}
+
+.IsAvailable {
+    border-color: #35a62b;
+    background-color: #fff;
+    color: #067D62
+}
+
+
+@media (min-width: 800px) {
+    .OptionButton {
+        height: 33px;
+    }
+}

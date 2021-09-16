@@ -1,0 +1,42 @@
+.RemoveItemConfirmation {
+    padding: 45px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.RemoveItemConfirmation p {
+    text-align: center;
+    font-family: 'Roboto, sans-serif';
+    height: 40px;
+    /* padding: 20px 30px; */
+    color: #5E6977;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.RemoveItemConfirmation .Buttons {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+@media only screen and (max-width: 768px) {
+    .RemoveItemConfirmation {
+        font-size: 80%;
+        padding-top: 20px;
+    }   
+    
+    .RemoveItemConfirmation p {
+        font-size: 18px
+    }
+}
+
+@media (max-width: 500px) {
+    .RemoveItemConfirmation {
+        font-size: 60%;
+    }   
+
+    .RemoveItemConfirmation p {
+        font-size: 12px
+    }
+}

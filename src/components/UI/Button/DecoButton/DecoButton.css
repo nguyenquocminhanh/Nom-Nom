@@ -1,0 +1,64 @@
+/* Put span inside <DecoButton> to change the font size */
+.Btn {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    justify-self: center;
+  
+    background-color: rgba(112, 21, 21, 0.5);
+    border: none;
+    color: rgba(245, 243, 241, 0.8);
+    text-align: center;
+    font-size: 20px;
+    padding: 12px 17px;
+    -webkit-transition: all 1.5s ease-out;
+    transition: all 1.5s ease-in;
+    
+    cursor: pointer;
+    /* affect when hover */
+    box-shadow: inset 0 0 0 2px rgba(112, 21, 21, 0.8);
+    font-family: Souvenir,Cooper,serif;
+    border-radius: 0.75rem;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+/* Hover */
+.Btn:hover {
+    color: rgba(112, 21, 21, 0.8);
+     /* affect when hover */
+    box-shadow: inset 400px 0 0 0 rgba(245, 243, 241, 0.6);
+}
+
+/* No outline when clicking */
+.Btn:focus {outline:none;} ::-moz-focus-inner {border:0;}
+
+.Btn:disabled {
+    box-shadow: inset 0 0 0 2px rgba(198, 198, 202, 0.9);
+    color: darkgray;
+    transition: all 1.5s ease-out;
+}
+
+@media (max-width: 1024px) {
+    .Btn {
+        font-size: 20px;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 430px) {
+    .Btn {
+        font-size: 15px;
+        padding: 8px 12px;
+        border-radius: 0.7rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .Btn {
+        font-size: 12px;
+        padding: 7px 10px;
+        border-radius: 0.65rem;
+    }
+}

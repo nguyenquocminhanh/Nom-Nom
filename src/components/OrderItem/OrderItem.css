@@ -1,0 +1,232 @@
+
+.OrderItem {
+    padding: 10px 0px;
+    max-height: 250px;
+    /* Content of OrderItem is flex row */
+    display: grid;
+    grid-template-columns: 0.7fr 0.5fr 0.75fr 0.95fr 0.8fr;
+    /* justify-content: stretch; */
+}
+
+.OrderItem:hover {
+    background: rgba(223, 219, 219, 1);
+    transition: background-color 0.4s;
+}
+
+.OrderItem .Buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 10px;
+}
+
+.OrderItem .Buttons .DeleteButton,
+.OrderItem .Buttons .LikeButton {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.OrderItem .Buttons .DeleteButton {
+    width: 18px;
+    height: 17px;
+    background: url('../../assets/Images/delete-icn.svg') no-repeat center;
+}
+
+.LikeButton {
+    background: url('../../assets/Images/twitter-heart.png') no-repeat;
+    width: 60px;
+    height: 60px;
+    background-size: 2900%;
+    margin-left: 8px;
+}
+
+.Active {
+    animation-name: animate;
+    animation-duration: .8s;
+    animation-iteration-count: 1;
+    animation-timing-function: steps(28);
+    animation-fill-mode: forwards;
+}
+
+@keyframes animate {
+    0%   { background-position: left;  }
+    50%  { background-position: right; }
+    100% { background-position: right; }
+}
+
+.OrderItem .Image {
+    display: block;
+}
+
+.OrderItem .Image img {
+    height: 100%;
+    width: 100%;
+}
+
+.OrderItem .Description {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.OrderItem .Description span {
+    font-size: 21px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.8)
+}
+
+.OrderItem .Quantity {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;  
+}
+
+.OrderItem .Quantity span {
+    margin: 0 0px;
+    font-size: 21px;
+    font-weight: 300;
+    color: rgba(0, 0, 0, 0.8)
+}
+
+.OrderItem .Quantity button {
+    width: 30px;
+    height: 30px;
+    background-color: #E1E8EE;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;  
+}
+
+.OrderItem .Quantity button:focus {
+    outline: none;
+}
+
+.OrderItem .Quantity .MinusButton img {
+    margin-bottom: 3px;
+}
+
+.OrderItem .TotalPrice {
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+}
+
+.OrderItem .TotalPrice span {
+    font-size: 21px;
+    color:  rgba(0, 0, 0, 0.8);
+    font-weight: 300;
+}
+
+@media (max-width: 1024px) {
+    .OrderItem {
+        grid-template-columns: 0.7fr 0.6fr 0.9fr 0.8fr 0.6fr;
+    }
+
+    .OrderItem .Description span,
+    .OrderItem .Quantity span,
+    .OrderItem .TotalPrice span {
+        font-size: 20px;
+    }
+
+    .OrderItem .Buttons {
+        padding-left: 18px;
+    }
+
+    .LikeButton {
+        width: 60px;
+        height: 60px;
+        background-size: 2900%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 800px) {
+    .OrderItem {
+        grid-template-columns: 0.65fr 0.65fr 0.9fr 0.85fr 0.55fr;
+    }
+
+    .OrderItem .Description span,
+    .OrderItem .Quantity span,
+    .OrderItem .TotalPrice span {
+        font-size: 17px;
+    }
+
+    .OrderItem .Quantity button {
+        width: 27px;
+        height: 27px;
+    }
+}
+
+@media (max-width: 500px) {
+    .OrderItem {
+        grid-template-columns: 0.7fr 0.55fr 0.9fr 0.9fr 0.5fr;
+    }
+
+    .OrderItem .Description span,
+    .OrderItem .Quantity span,
+    .OrderItem .TotalPrice span {
+        font-size: 13px;
+    }
+
+    .OrderItem .Buttons {
+        padding-left: 18px;
+    }
+
+    .LikeButton {
+        width: 60px;
+        height: 60px;
+        background-size: 2900%;
+        margin-left: 0;
+    }
+
+    .OrderItem .Quantity button {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 375px) {
+    .OrderItem {
+        grid-template-columns: 0.55fr 0.6fr 1.05fr 0.8fr 0.6fr;
+    }
+
+    .OrderItem .Description span,
+    .OrderItem .Quantity span,
+    .OrderItem .TotalPrice span {
+        font-size: 13px;
+    }
+
+    .OrderItem .Quantity button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .OrderItem .Buttons {
+        padding-left: 10px;
+    }
+
+    .LikeButton {
+        margin-left: 3px;
+    }
+}
+
+@media (max-width: 350px) {
+    .OrderItem .Description span,
+    .OrderItem .Quantity span,
+    .OrderItem .TotalPrice span {
+        font-size: 12px;
+    }
+
+    .OrderItem .Quantity button {
+        width: 17px;
+        height: 17px;
+    }
+
+    .OrderItem .Buttons {
+        padding-left: 6px;
+    }
+
+    .LikeButton {
+        margin-left: 2px;
+    }
+}

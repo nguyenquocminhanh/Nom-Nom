@@ -1,0 +1,11 @@
+.Content {
+    color: #919aa3 !important;
+    cursor: pointer;
+    margin: 0;
+}
+
+.RadioInput {
+    height: 25%;
+    width: 75%;
+}
+

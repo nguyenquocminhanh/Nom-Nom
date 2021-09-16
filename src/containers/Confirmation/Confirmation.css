@@ -1,0 +1,64 @@
+.ConfirmationWrapper {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.NavButtons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.NavButtons button {
+    margin-top: 30px;
+    /* để nút ko bị bành ra cả 2 bên vì container của nó display flex column */
+    justify-self: center;
+    background-color: lightslategrey;
+    border: none;
+    color: #FFFFFF;
+    /* căn chữ */
+    text-align: center;
+    font-size: 20px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 15px 20px;
+}
+
+.NavButtons button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.8s;
+    /* font-family: 'times, Times New Roman, times-roman, georgia, serif'; */
+}
+
+.NavButtons button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    right: -15px;
+    transition: 0.5s;
+}
+
+.NavButtons button:hover span {
+    padding-right: 25px;
+}
+  
+.NavButtons button:hover span:after {
+    opacity: 1;
+    right: 0;
+} 
+
+.ConfirmNumber {
+    margin: 30px 200px;
+    padding: 30px 0px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+    border: 5px dashed #A47C43;
+    border-radius: 20px 20px 20px 20px;
+}

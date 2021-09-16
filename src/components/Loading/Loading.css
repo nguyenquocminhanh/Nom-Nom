@@ -1,0 +1,68 @@
+.Loading {
+    height: 100vh;
+    background-color: #ebe9e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* cân bằng vì ở trên có thanh toolbar */
+    padding-bottom: 150px;
+}
+
+.Loading img {
+    width: 60px;
+    height: 60px;
+    animation: zoomInOut 1.75s infinite ease-in-out
+}
+
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1,1);
+        opacity: 0.6;
+    }
+    50% {
+        transform: scale(1.2,1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1,1);
+        opacity: 0.6;
+    }
+}
+
+
+@media (min-width: 375px) {
+    .Loading img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (min-width: 410px) {
+    .Loading img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+@media (min-width: 768px) {
+    .Loading img {
+        width: 90px;
+        height: 90px;
+        position: absolute;
+        transform: translate(-50%,-45%);
+        top: 30%;
+        left: 45%;
+    }
+}
+
+
+@media (min-width: 1025px) {
+    .Loading img {
+        width: 150px;
+        height: 150px;
+        position: inherit;
+        transform: none;
+    }
+}

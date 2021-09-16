@@ -1,0 +1,114 @@
+.SlideShowContainer {
+    box-sizing: border-box;
+    max-width: 1100px;
+    position: relative;
+    margin: auto;
+}
+
+.MySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.Prev, .Next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px 18px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(112, 21, 21, 0.8);
+}
+
+.Appear {
+    display: block;
+}
+
+.Next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.Prev:hover, .Next:hover {
+    background-color: rgba(112, 21, 21, 0.5);
+}
+
+.Text {
+    color: #F5F3F1;
+    font-weight: 600;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    float: left;
+}
+
+.Dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 12px 10px;
+    background-color: rgba(112, 21, 21, 0.5);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .Dot:hover {
+    background-color: #701515;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+  }
+
+  @media (max-width: 430px) {
+    .Prev, .Next {
+        padding: 8px 12px;
+    
+    }
+    .Text {
+        font-size: 15px;
+    }
+
+    .Dot {
+        height: 10px;
+        width: 10px;
+        margin: 10px 8px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .Prev, .Next {
+        padding: 6px 10px;
+    
+    }
+    .Text {
+        font-size: 12px;
+    }
+    .Dot {
+        height: 8px;
+        width: 8px;
+        margin: 8px 6px;
+    }
+  }
