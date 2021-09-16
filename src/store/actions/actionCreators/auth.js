@@ -22,7 +22,7 @@ export const authSuccess = (token, userId, refreshToken, isSignup) => {
         userId: userId,
         isSignup: isSignup,
     }
-};
+};   
 
 export const authFail = error => {
     return {
