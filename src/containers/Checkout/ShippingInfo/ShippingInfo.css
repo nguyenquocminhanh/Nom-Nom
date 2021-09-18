@@ -1,3 +1,73 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/react-datepicker/4.2.1/react-datepicker.min.css');
+
+.DateTimePicker {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.Wrapper {
+    width: 100%;
+}
+
+.Icon {
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    right: 15px;
+    top: 8px
+}
+
+.Icon img {
+    height: 100%;
+    width: 100%;
+}
+
+.CalenDarInput {
+    width: 100%;
+    height: 40px;
+    outline: none;
+    padding: 0 10px;
+    font-size: 15px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+}
+
+.CalenDarInput:focus {
+    outline: none;
+    border-color: #0850c4;
+    border-width: 2px !important;
+    /* background: lightgray */
+}
+
+.Error {
+    border-bottom: 2px solid #e32b2b;
+}
+
+.Correct {
+    border-bottom: 2px solid #0a5;
+}
+
+.CalenDar {
+    /* margin-left: 30px; */
+    text-transform: capitalize;
+}
+
+.CalenDar {
+    margin-left: 40px;
+    /* max-width: 450px; */
+    width: auto;
+    display: flex;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.CalenDar:focus ~ .CalenDarInput {
+    outline: none;
+    border-color: #0850c4;
+    border-width: 2px !important;
+}
+
 #txtComputer {
     font-size: 24px;
 }
@@ -39,7 +109,8 @@
 /* DELIVERY OPTIONS */
 .DeliveryOptions,
 .ShippingAddress,
-.ContactInfo {
+.ContactInfo,
+.TimeDetails {
     word-spacing: 2px;
     font-size: 26px;
     line-height: 24px;
@@ -51,7 +122,8 @@
 /* Topic */
 .DeliveryOptions h4,
 .ShippingAddress h4,
-.ContactInfo h4 {
+.ContactInfo h4,
+.TimeDetails h4 {
     margin: 0;
     padding-left: 30px;
 }
@@ -131,6 +203,7 @@
     padding-left: 30px;
 }
 
+.TimeDetails .Hint,
 .ShippingAddress .Hint {
     font-size: 16px;
     font-weight: 300;
@@ -161,6 +234,28 @@
     text-transform: none;
     font-size: 14px;
 }
+
+/* ########################################### */
+/* Contact Details */
+.TimeDetails {
+    padding: 0;
+    padding-bottom: 30px;
+ }
+ 
+ .TimeDetails .TimeForm {
+     padding: 0 30px;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-auto-rows: 40px;
+ 
+     grid-column-gap: 30px;
+     grid-row-gap: 40px;
+ }
+ 
+ .TimeForm span {
+     font-size: 14px;
+     text-transform: none;
+ }
 
 /* ########################################### */
 /* Contact Details */
@@ -213,6 +308,14 @@
 }
 
 
+@media (max-width: 1300px) {
+    .CalenDar {
+        margin-left: 0px;
+        
+    }
+}
+
+
 @media (max-width: 800px) {
     .ShippingInfo {
         padding-top: 25px;
@@ -232,6 +335,15 @@
 
     .ShippingInfo h4 {
         font-size: 22px;
+    }
+     
+    .TimeDetails .TimeForm {
+        grid-auto-rows: 35px;
+        grid-row-gap: 45px;
+    }
+
+    .Wrapper {
+        height: 35px;
     }
 
     .ShippingInfo .Content p {
@@ -272,6 +384,18 @@
     .Options .PickUp {
         margin-top: 20px;
     }
+
+    .Icon {
+        height: 20px;
+        width: 20px;
+        right: 10px;
+        top: 8px
+    }
+
+    .CalenDarInput {
+        font-size: 14px;
+        height: 34.64px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -287,11 +411,23 @@
         padding: 0px 15px;
     }
 
+    .TimeDetails .TimeForm {
+        padding: 0px 15px;
+        grid-template-columns: 1fr;
+        /* grid-auto-rows: 38px;
+        grid-row-gap: 40px; */
+    }
+
+    .CalenDar {
+        margin-left: 60px;
+    }
+
     .ShippingInfo .PickUp,
     .ShippingInfo .Delivery {
         padding: 0px 10px;
-    }
+    }   
 
+    .TimeDetails .Hint,
     .ShippingInfo .Hint {
         padding-left: 15px;
         font-size: 14px;
@@ -344,6 +480,17 @@
     .ErrorMessage {
         font-size: 12px;
     }
+
+    .Icon {
+        height: 18px;
+        width: 18px;
+        right: 8px;
+    }
+
+    .CalenDarInput {
+        font-size: 13px;
+        height: 34.64px;
+    }
 }
 
 @media (max-width: 450px) {
@@ -354,9 +501,28 @@
         grid-row-gap: 40px;
     }
 
+    .TimeDetails .TimeForm {
+        grid-auto-rows: 38px;
+        grid-row-gap: 40px;
+    }
+
+    .CalenDar {
+        margin-left: 5px;
+    }
+
+    .CalenDarInput {
+        height: 37.61px;
+        padding: 0 10px;
+        font-size: 12.5px;
+    }
+
     .ShippingInfoWrapper .ShippingInfo {
         margin: 15px 10px;
         padding: 10px 0px;
+    }
+
+    .TimeDetails {
+        padding-bottom: 10px;
     }
 
     .ShippingInfo h4,
@@ -371,6 +537,7 @@
         padding: 0px 7px;
     }
 
+    .TimeDetails .Hint,
     .ShippingInfo .Hint {
         padding-left: 15px;
         white-space: 1px;
@@ -452,6 +619,27 @@
         grid-row-gap: 37px;
     }
 
+    .TimeDetails .TimeForm {
+        grid-auto-rows: 35px;
+        grid-row-gap: 37px;
+    }
+
+    .CalenDar {
+        margin-left: -6px;
+    }
+
+    .CalenDarInput {
+        height: 34.64px;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .Icon {
+        height: 17px;
+        width: 17px;
+        right: 12px;
+    }
+
     .ShippingInfo .Title p{
         font-size: 22px;
     }
@@ -510,9 +698,16 @@
         font-size: 11px;
     }
 
+    .TimeDetails .Hint,
     .ShippingInfo .Hint {
         padding-left: 15px;
         white-space: 1px;
         font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .CalenDar {
+        margin-left: -22px;
     }
 }

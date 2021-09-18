@@ -3,6 +3,7 @@ import classes from './EditedDetail.css';
 import {connect} from 'react-redux';
 
 import {changeDateFormat} from '../../../shared/utility';
+import {AiFillEdit} from 'react-icons/ai';
 
 import Input from './Input/Input';
 
@@ -70,10 +71,11 @@ class EditedDetail extends Component {
                         {radio}&nbsp;
                     </span>
             })}
-        </div>) :
-
+        </div>) : 
+        
         <p className={classes.Content} onClick={() => this.detailClickedHandler()} style={{textTransform: this.props.isCapitalize ? 'capitalize' : 'none'}}>
             {this.props.isDateType ? changeDateFormat(this.props.detail) : this.props.detail}
+            <AiFillEdit className={classes.EditIcon} style={{right: this.props.isRadio ? '25%' : '0'}}/>
         </p>
 
         return (

@@ -134,6 +134,7 @@ class OrderHistory extends Component {
                 addressLine2={order.shippingInfo.shippingAddress.city + ', ' + order.shippingInfo.shippingAddress.state + ' ' + order.shippingInfo.shippingAddress.zipcode}
                 phone={order.shippingInfo.phone}
                 email={order.shippingInfo.email}
+                expectedTime={order.expectedTime}
             />
         }) : null;
         

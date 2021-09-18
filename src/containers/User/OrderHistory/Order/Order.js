@@ -24,7 +24,6 @@ import Input from '../../../../components/UI/Input/Input';
 import Review from './Review/Review';
 import Tracking from '../../../../components/Tracking/Tracking';
 
-import { FaClosedCaptioning } from 'react-icons/fa';
 import { VscOpenPreview } from 'react-icons/vsc';
 
 class Order extends Component {
@@ -55,16 +54,6 @@ class Order extends Component {
         isPickedup: false
     }
 
-    trackOrderHandler = () => {
-        this.setState(prevState => {
-            return {
-                isTrackOrderClicked: !prevState.isTrackOrderClicked,
-                isShowDetailsClicked: false,
-                isRateYourDishesClicked: false
-            }
-        })
-    }
-
     viewOrderDetailsHandler = () => {
         this.setState(prevState => {
             return {
@@ -75,25 +64,34 @@ class Order extends Component {
         })
     }
 
+    closeModalHandler = () => {
+        this.setState({
+            isTrackOrderClicked: false,
+            isShowDetailsClicked: false,
+            isRateYourDishesClicked: false,
+            isRateReviewClicked: false
+        })
+        document.body.style.overflow = 'auto'
+    }
+
     orderAgainClickedHandler = () => {
         this.setState({
             isOrderAgainClicked: true
         })
         this.props.arrayDishes.forEach(dish => {
             this.props.onAddToCart(this.props.dishes[dish.id], dish.quantity)
-
         })
     }
 
     rateDishesHandler = () => {
-        this.setState(prevState => {
-            return {
-                isTrackOrderClicked: false,
-                isRateYourDishesClicked: !prevState.isRateYourDishesClicked,
-                isRateReviewClicked: false,
-                dishIsRating: 0
-            }
+        this.setState({
+            isTrackOrderClicked: false,
+            isRateYourDishesClicked: true,
+            isRateReviewClicked: false,
+            dishIsRating: 0
         })
+        document.body.style.overflow = 'hidden';
+        document.body.scrollTo
     }
 
     increaseButtonClickedHandler = () => {
@@ -176,26 +174,28 @@ class Order extends Component {
             isRated: true,
             dayRated: getCurrentdate()
         })
+        document.body.style.overflow = 'auto';
     }
 
     onReviewRateRequestHandler = () => {
-        this.setState(prevState => {
-            return {
-                isTrackOrderClicked: false,
-                isRateYourDishesClicked: false,
-                isRateReviewClicked: !prevState.isRateReviewClicked,
-                dishIsRating: 0,
-            }
+        this.setState({
+            isTrackOrderClicked: false,
+            isRateYourDishesClicked: false,
+            isRateReviewClicked: true,
+            dishIsRating: 0,
         })
+        document.body.style.overflow = 'hidden'
     }
 
     // Track order
     trackOrderHandler = () => {
-        this.setState(prevState => {
-            return {
-                isTrackOrderClicked: !prevState.isTrackOrderClicked
-            }
+        this.setState({
+            isTrackOrderClicked: true,
+            isShowDetailsClicked: false,
+            isRateYourDishesClicked: false
         })
+
+        document.body.style.overflow = "hidden"
     }
 
     componentDidMount = () => {
@@ -225,7 +225,7 @@ class Order extends Component {
                 <Modal 
                     modalType={"RatingModal"}
                     show={this.state.isRateYourDishesClicked}
-                    backdropClicked={this.rateDishesHandler}>
+                    backdropClicked={this.closeModalHandler}>
                         {/* {this.props.arrayDishes.map(dish => { */}
                         <div className={classes.ModalContent}>
                             {/* Description */}
@@ -274,7 +274,7 @@ class Order extends Component {
                                             isAvailable={true}>
                                                 Previous
                                         </OptionButton> 
-                                    </div>}
+                                    </div>} 
 
                                     {/* increase button */}
                                     {this.state.dishIsRating === this.props.arrayDishes.length - 1 ?
@@ -315,7 +315,7 @@ class Order extends Component {
                 <Modal
                     modalType={"RatingReviewModal"}
                     show={this.state.isRateReviewClicked}
-                    backdropClicked={this.onReviewRateRequestHandler}
+                    backdropClicked={this.closeModalHandler}
                     >
                         <div className={classes.ModalRatingReviewContent}>
                             <p className={classes.RateReviewTitle}>
@@ -337,7 +337,7 @@ class Order extends Component {
                 <Modal
                     modalType={"TrackingModal"}
                     show={this.state.isTrackOrderClicked}
-                    backdropClicked={this.trackOrderHandler}
+                    backdropClicked={this.closeModalHandler}
                     >
                         <Tracking
                             isOrdered={this.state.isOrdered}
@@ -476,6 +476,7 @@ class Order extends Component {
                         phone={this.props.phone}
                         email={this.props.email}
                         arrayDishes={this.props.arrayDishes}
+                        expectedTime={this.props.expectedTime}
                     /> 
                     : 
                     null}
@@ -494,6 +495,6 @@ const mapDispatchToProps = dispatch => {
     return {
         onAddToCart: (dish, amount) => dispatch(actionCreators.addToCart(dish, amount)),
     }
-}
+} 
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Order));

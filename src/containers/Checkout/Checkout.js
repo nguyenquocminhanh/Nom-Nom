@@ -44,7 +44,7 @@ class Checkout extends Component {
     }
 
     // submit order to server
-    submitFormClickedHandler = (event, shippingInfo) => {
+    submitFormClickedHandler = (event, shippingInfo, time) => {
         event.preventDefault();
         // spinner is rotating
         this.setState({
@@ -68,7 +68,8 @@ class Checkout extends Component {
             date: getCurrentdate(),
             shippingInfo: shippingInfo,
             userId: this.props.userId,
-            notes: this.state.notes
+            notes: this.state.notes,
+            expectedTime: time
         }
 
         // muốn all customer đều có thể order

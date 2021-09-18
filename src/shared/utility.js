@@ -1,3 +1,4 @@
+
 // utility dùng để update object
 // khi hoàn thành xong hết reducer mới hẵn làm utility!!
 
@@ -39,9 +40,26 @@ export const getCurrentdate = () => {
     let newMonth = '';
     const date = new Date().getDate();
     const year = new Date().getFullYear();
-    const hour = new Date().getHours() < 10 ? '0' + new Date().getHours() : new Date().getHours();
-    const minute = new Date().getMinutes() < 10 ? '0' + new Date().getMinutes() : new Date().getMinutes();
-    const second = new Date().getSeconds() < 10 ? '0' + new Date().getSeconds() : new Date().getSeconds();
+    // const hour = new Date().getHours() < 10 ? '0' + new Date().getHours() : new Date().getHours();
+    // const minute = new Date().getMinutes() < 10 ? '0' + new Date().getMinutes() : new Date().getMinutes();
+    // const second = new Date().getSeconds() < 10 ? '0' + new Date().getSeconds() : new Date().getSeconds();
+
+    let hour = new Date().getHours();
+    let minute = new Date().getMinutes();
+    let tag = "AM";
+    if (hour > 12) {
+        hour = hour - 12;
+        tag = "PM"
+    }
+    if (minute < 10) {
+        minute = '0' + minute
+    }
+    if (hour < 10) {
+        hour = '0' + hour
+        if (hour === '00') {
+            hour = '12'
+        }
+    }
 
     switch (month) {
         case 0:
@@ -83,7 +101,7 @@ export const getCurrentdate = () => {
         default: 
     }
 
-    const currentTime = newMonth + ' ' + date + ', ' + year + ', ' + ' ' + hour + ':' + minute + ':' + second;
+    const currentTime = newMonth + ' ' + date + ', ' + year + ', ' +  hour + ':' + minute + ' ' + tag;
     return currentTime;
 }
 
@@ -96,12 +114,153 @@ export const sortByDate = arr => {
  };
 
 // change from 2021-10-30 to 10/30/2021
- export const changeDateFormat = date => {
+export const changeDateFormat = date => {
     let year = date.substring(0, 4);
     let month = date.substring(5,7);
     let day = date.substring(8, 10);
     return month + '/' + day + '/' + year; 
 }
+
+export const getMonth = (month) => {
+    let newMonth = '';
+
+    switch(month) {
+        case 0:
+            newMonth = 'Jan';
+            break;
+        case 1:
+            newMonth = 'Feb';
+            break;
+        case 2:
+            newMonth = 'Mar';
+            break;
+        case 3:
+            newMonth = 'Apr';
+            break;
+        case 4:
+            newMonth = 'May';
+            break;
+        case 5:
+            newMonth = 'Jun';
+            break;
+        case 6:
+            newMonth = 'Jul';
+            break;
+        case 7:
+            newMonth = 'Aug';
+            break;
+        case 8:
+            newMonth = 'Sept';
+            break;
+        case 9:
+            newMonth = 'Oct';
+            break;
+        case 10:
+            newMonth = 'Nov';
+            break;
+        case 11:
+            newMonth = 'Dec';
+            break;
+        default:
+    }
+    return newMonth;
+}
+
+export const getFullMonth = (month) => {
+    let newMonth = '';
+
+    switch(month) {
+        case 0:
+            newMonth = 'January';
+            break;
+        case 1:
+            newMonth = 'February';
+            break;
+        case 2:
+            newMonth = 'March';
+            break;
+        case 3:
+            newMonth = 'April';
+            break;
+        case 4:
+            newMonth = 'May';
+            break;
+        case 5:
+            newMonth = 'June';
+            break;
+        case 6:
+            newMonth = 'July';
+            break;
+        case 7:
+            newMonth = 'August';
+            break;
+        case 8:
+            newMonth = 'September';
+            break;
+        case 9:
+            newMonth = 'October';
+            break;
+        case 10:
+            newMonth = 'November';
+            break;
+        case 11:
+            newMonth = 'December';
+            break;
+        default:
+    }
+    return newMonth;
+}
+
+export const getDay = (day) => {
+    let newDay = '';
+
+    switch(day) {
+        case 0:
+            newDay = 'Sun';
+            break;
+        case 1:
+            newDay = 'Mon';
+            break;
+        case 2:
+            newDay = 'Tue';
+            break;
+        case 3:
+            newDay = 'Wed';
+            break;
+        case 4:
+            newDay = 'Thu';
+            break;
+        case 5:
+            newDay = 'Fri';
+            break;
+        case 6:
+            newDay = 'Sat';
+            break;
+        default:
+    }
+    return newDay;
+}
+
+export const getTime = (time) => {
+    let hour = time.getHours();
+    let minute = time.getMinutes();
+    let tag = "AM";
+    if (hour > 12) {
+        hour = hour - 12;
+        tag = "PM"
+    }
+    if (minute < 10) {
+        minute = '0' + minute
+    }
+    if (hour < 10) {
+        hour = '0' + hour
+        if (hour === '00') {
+            hour = '12'
+        }
+    }
+    return hour + ':' + minute + ' ' + tag
+}
+
 
 export const getRandomNumber = () => {
     return Math.floor(100000 + Math.random() * 900000);

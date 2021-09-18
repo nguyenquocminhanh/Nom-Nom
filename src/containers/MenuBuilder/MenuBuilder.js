@@ -37,6 +37,7 @@ class MenuBuilder extends Component {
                 pickedDishId: id
             }
         )
+        document.body.style.overflowY = "hidden"
     }
 
     updateCurrentPriceHandler = (quantity) => {
@@ -55,6 +56,7 @@ class MenuBuilder extends Component {
                 numberOfPickedDish: 0
             }
         )
+        document.body.style.overflowY = "auto"
     }
 
     // Click add to cart button, the modal will disappear and cart updated
@@ -96,6 +98,7 @@ class MenuBuilder extends Component {
             })
         }, 2000)
     }
+
 
     componentDidMount = () => {
         const imgs = [...this.props.dishes];

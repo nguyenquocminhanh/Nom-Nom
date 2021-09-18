@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
+import DatePicker from "react-datepicker"
+import {setMinutes, setHours, addDays, subDays} from "date-fns";
+
 import * as actionCreators from '../../../store/actions/index';
 
 import classes from './ShippingInfo.css';
@@ -10,11 +13,13 @@ import {FaShippingFast, FaStore} from 'react-icons/fa';
 import {MdLocalShipping} from 'react-icons/md';
 import {GoLocation} from 'react-icons/go'
 import {GrContactInfo} from 'react-icons/gr';
-import {FcIdea} from 'react-icons/fc'
+import {FcIdea} from 'react-icons/fc';
+import {BsClockHistory} from 'react-icons/bs'
+import {valid, invalid} from '../../../assets/Images/index';
 
 import DecoButton from '../../../components/UI/Button/DecoButton/DecoButton';
 import Input from '../../../components/UI/Input/Input';
-import {checkValidity} from '../../../shared/utility';
+import {checkValidity, getDay, getMonth, getFullMonth, getTime} from '../../../shared/utility';
 import {checked} from '../../../assets/Images/index';
 
 class ShippingInfo extends Component {
@@ -116,7 +121,48 @@ class ShippingInfo extends Component {
             }
         },
         isPickUp: false,
-        formIsValid: false
+        formIsValid: false,
+        time: null,
+        isValidTime: null
+    }
+
+    setDateHandler = (date) => {
+        // this.setState({time: date})
+        // console.log((new Date()).getHours())
+
+        // set default time to nearset day and hours in case input is cleared
+        if (date === null) {
+            this.setState({time: setHours(setMinutes(addDays(new Date(), new Date().getHours() > 12 ? 2 : 1), 0), 10), isValidTime: true})
+        }
+
+        else {
+            if (date.getDate() === (new Date()).getDate()) {
+                this.setState({time: addDays(date, new Date().getHours() > 12 ? 2 : 1), isValidTime: true})
+            }
+
+            else if (date.getHours() < 10) {
+                this.setState({time: setHours(setMinutes(date, 0), 10), isValidTime: true})
+            }
+
+            else if (date.getHours() >= 20) {
+                this.setState({time: setHours(setMinutes(date, 30), 19), isValidTime: true})
+            }
+
+            else {
+                this.setState({time: date, isValidTime: true})
+            }
+        }
+
+        console.log(this.state.time)
+    }
+
+    isSevenDayAfter = () => {
+        let arr = [];
+        let today = (new Date()).getHours() > 12 ? addDays(new Date(), 1) : new Date();
+        for (let i = 1; i <= 7; i++) {
+            arr.push(addDays(today, i));
+        };
+        return arr;
     }
 
     checkBoxClickedHandler = () => {
@@ -347,6 +393,46 @@ class ShippingInfo extends Component {
                 </div>
             </div>)
 
+        const highlightWithRanges = [
+            {
+                "react-datepicker__day--highlighted-custom-2": [
+                    addDays(new Date(), (new Date()).getHours() > 12 ? 8 : 1),
+                    addDays(new Date(), 2),
+                    addDays(new Date(), 3),
+                    addDays(new Date(), 4),
+                    addDays(new Date(), 5),
+                    addDays(new Date(), 6),
+                    addDays(new Date(), 7)
+                ],
+            },
+        ]
+
+        let attachedClasses = [classes.CalenDarInput, ''];
+        if (!this.state.isValidTime) {
+            attachedClasses = [classes.CalenDarInput, classes.Error];
+        }
+
+        if (this.state.isValidTime) {
+            attachedClasses = [classes.CalenDarInput, classes.Correct]
+        }
+
+        if (this.state.isValidTime === null) {
+            attachedClasses = [classes.CalenDarInput, '']
+        }
+
+        let icon = null;
+
+        // if (!this.state.isValidTime) {
+        //     icon = (<span className={classes.Icon}>
+        //                 <img src={invalid}/>
+        //             </span>)
+        // }
+        if (this.state.isValidTime) {
+            icon = (<span className={classes.Icon}>
+                <img src={valid}/>
+            </span>)
+        }
+
         return (
             <div className={classes.ShippingInfoWrapper}>
                 <div className={classes.ShippingInfo}>
@@ -358,6 +444,7 @@ class ShippingInfo extends Component {
                     <div className={classes.DeliveryOptions}>
                         <p>&nbsp;</p>
                         <h4>Delivery Options <FaShippingFast/></h4>
+                        
                         <p>&nbsp;</p>
                         <div className={classes.Options}>
                             {/* Delivery */}
@@ -414,6 +501,44 @@ class ShippingInfo extends Component {
                     >
                         {/* (Shipping Address / PickUp Address) */}
                         {shippingAddress}
+                        
+
+                        <div className={classes.TimeDetails}>
+                            <p>&nbsp;</p>
+                            <h4>{this.props.isPickUp ? 'Pick up' : 'Delivery'} time <BsClockHistory/></h4>
+                            <p className={classes.Hint}><FcIdea/> Our working hours: 10:00 AM - 7:30 PM</p> 
+                            <p>&nbsp;</p>
+
+                            <div className={classes.TimeForm}>
+                                <div className={classes.DateTimePicker}>
+                                    <DatePicker 
+                                        showTimeSelect 
+                                        value={this.state.time !== null ? getDay(this.state.time.getDay()) + ', ' + getMonth(this.state.time.getMonth()) + ' ' + this.state.time.getDate() + ', ' + this.state.time.getFullYear() + ' at ' + getTime(this.state.time)  : null}
+                                        // showPopperArrow={false} 
+                                        selected={this.state.time} 
+                                        onChange={(time) => this.setDateHandler(time)} 
+                                        dateFormat="MMMM dd, yyyy hh:mm aa" 
+                                        timeIntervals={30} 
+                                        minTime={setHours(setMinutes(new Date(), 0), 10)}
+                                        maxTime={setHours(setMinutes(new Date(), 30), 19)}
+                                        includeDates={this.isSevenDayAfter()}
+                                        placeholderText="Click to select date and time" 
+
+                                        className={attachedClasses.join(' ')}
+                                        calendarClassName={classes.CalenDar}
+                                        wrapperClassName={classes.Wrapper}
+
+                                        disabledKeyboardNavigation
+                                        // showDisabledMonthNavigation                                    
+                                        showMonthDropdown
+                                        // shouldCloseOnSelect={false}
+                                        highlightDates={highlightWithRanges}
+                                    />
+                                    {icon}
+                                </div>
+                            </div>
+                        </div>
+                        
 
                         {/* Contact Details */}
                         <div className={classes.ContactDetails}>
@@ -500,8 +625,8 @@ class ShippingInfo extends Component {
                     {/* Review & Pay */}
                     <div className={classes.SubmitButton}>
                         <DecoButton 
-                            disabled={!this.state.formIsValid} 
-                            buttonClicked={(event) => this.props.submitFormClicked(event, shippingInfo)}>
+                            disabled={!this.state.formIsValid || this.props.totalCartPrice === 0 || !this.state.isValidTime} 
+                            buttonClicked={(event) => this.props.submitFormClicked(event, shippingInfo, getFullMonth(this.state.time.getMonth()) + ' ' + this.state.time.getDate() + ', ' + this.state.time.getFullYear() + ', ' + getTime(this.state.time))}>
                                 <span style={{cursor: this.state.formIsValid? 'pointer' : 'not-allowed'}}>REVIEW AND PAY</span>
                         </DecoButton> 
                     </div>

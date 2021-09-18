@@ -226,6 +226,7 @@
 .Input {
     height: 25%;
     width: 75%;
+    position: relative;
 }
 
 .SubmitButtonWrapper {

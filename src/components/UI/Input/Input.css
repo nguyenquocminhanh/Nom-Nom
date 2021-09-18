@@ -82,7 +82,7 @@
 
 .TextArea textarea:focus {
     outline: none;
-    border-color: #007185;
+    border-color: #0850c4;
     border-width: 1px !important;
     box-shadow: 0 0 0 3px #c8f3fa, 0 1px 2px rgb(15 17 17 / 15%) inset;
     /* background: lightgray */

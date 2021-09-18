@@ -2,6 +2,7 @@
     color: #919aa3 !important;
     cursor: pointer;
     margin: 0;
+    position: relative;
 }
 
 .RadioInput {
@@ -9,3 +10,8 @@
     width: 75%;
 }
 
+.EditIcon {
+    position: absolute;
+    right: 10px;
+    text-align: justify;
+}

@@ -49,6 +49,7 @@ class ShoppingCart extends Component {
             isWarning:false,
             removeItemRequestId: null
         })
+        document.body.style.overflow = "auto"
     }
     
     // Show Modal when isWarning is TRUE
@@ -60,6 +61,7 @@ class ShoppingCart extends Component {
                 removeItemRequestId: id
             }
         )
+        document.body.style.overflow = "hidden"
     }
 
     // Find Label of Food to be removed in Remove Confirmation
@@ -76,6 +78,7 @@ class ShoppingCart extends Component {
     //  Accept the request to Remove Item
     acceptRemoveItemHandler = (removedItemId) => {
         this.closeWarningHandler();
+        document.body.style.overflow = "auto"
         this.props.onRemoveItem(removedItemId);
     }
 

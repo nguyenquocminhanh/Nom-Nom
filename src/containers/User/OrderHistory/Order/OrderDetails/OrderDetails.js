@@ -56,6 +56,11 @@ const orderDetails = props => {
                     
                     {props.isPickUp ? <p><FaStore/> &nbsp; Pick up</p> : <p><MdLocalShipping/> &nbsp; Standard delivery</p>}
                     
+                    <div className={classes.Head}>
+                        Expected {props.isPickUp ? 'pick up' : 'delivery'} time
+                    </div>
+
+                    <p>{props.expectedTime}</p>
                 </div>
 
                 <div className={classes.PaymentMethod}>
@@ -101,28 +106,6 @@ const orderDetails = props => {
                     </ul>
                 </div>
             </div>
-
-            {/* <h5>Order</h5>
-            <div>#{props.confirm}</div>
-            <div>{props.date}</div>
-            
-            <h5>Shipment Method</h5>
-            <div>{props.isPickUp ? 'Pick Up' : 'Delivery'}</div>
-
-            <h5>Payment</h5>
-            <div>Cash</div> 
-            
-            Address
-            <h4>Address</h4>
-            <div>{props.isPickUp ? '9 Lonsdale St, Dorchester, MA 02124' : props.address}</div>
-            <div>{props.isPickUp ? '8572694891' : props.phone}</div>
-            <div>{props.isPickUp ? null : props.email}</div>
-
-            <h4>Order Total</h4>
-            <div>
-                <span className={classes.NumberOfItems}>{props.items} {props.items > 1? 'items' : 'item'}</span>
-                <span className={classes.Price}>${props.price}</span>
-            </div> */}
         </div>
     )
 }

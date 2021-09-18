@@ -823,9 +823,8 @@ class Profile extends Component {
                     <p className={classes.Title}>
                         Gender
                     </p>
-                    {/* <p className={classes.Content}>
-                        {this.state.controls.gender.value}
-                    </p> */}
+
+                    
                     <EditedDeatil
                         isRadio={true}
                         radioName={'gender'}

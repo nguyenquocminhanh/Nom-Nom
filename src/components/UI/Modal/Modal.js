@@ -24,6 +24,7 @@ const modal = props => {
                     // if show-isPicking is TRUE, Modal appears
                     // else Modal disappears
                     transform: props.show ? 'translate(-50%, -50%)' : 'translate(-50%, -250%)',
+
                     opacity: props.show? '1': '0'
                 }}
             >    
