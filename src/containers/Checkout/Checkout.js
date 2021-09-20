@@ -72,6 +72,13 @@ class Checkout extends Component {
             expectedTime: time
         }
 
+        let shippingAddress = shippingInfo['shippingAddress'].street + ' ' + (shippingInfo['shippingAddress'].apt !== '' ? '' + shippingInfo.shippingAddress.apt + ', ' : ', ') + '' + shippingInfo.shippingAddress.city + ', ' + shippingInfo.shippingAddress.state + ', ' + shippingInfo.shippingAddress.zipcode;
+
+        localStorage.setItem('customerName', shippingInfo.firstName + ' ' + shippingInfo.lastName);
+        localStorage.setItem('shippingAddress', shippingAddress);
+        localStorage.setItem('expectedTime', time);
+        localStorage.setItem('isPickUp', this.state.isPickUp);
+
         // muốn all customer đều có thể order
         axios.post('/orders.json', customerOrder)
             .then(response => {
@@ -83,7 +90,6 @@ class Checkout extends Component {
                 localStorage.setItem('cart', JSON.stringify({cart: [], totalCartPrice: 0}))
                 // xóa cart trong DB
                 
-
                 // Navigate to confirmation page/ passing response.data.name to querry param
                 this.props.history.replace({pathname: '/confirmation', search: '?' + 'confirm=' + response.data.name});
             })
@@ -96,9 +102,9 @@ class Checkout extends Component {
 
     render() {
         let spinner = this.state.isLoading ? 
-            <Modal show={this.state.isLoading}>
+            <Modal show={this.state.isLoading} closeButtonExist={false}>
                 <Spinner/>
-                <p style={{textAlign: 'center'}}>Please wait... while we're preparing your Order</p> 
+                <p style={{textAlign: 'center'}}>Please wait... we're preparing your Order</p> 
             </Modal> : null
 
         return (

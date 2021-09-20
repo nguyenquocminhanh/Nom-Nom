@@ -29,7 +29,7 @@ const notFound = props => {
                         <a><FaInstagramSquare className={classes.Instagram}/></a>
                         <a><AiFillTwitterCircle className={classes.Twitter}/></a>
                     </div>
-                </div>
+                </div> 
 		    </div>
         </Aux>
          
