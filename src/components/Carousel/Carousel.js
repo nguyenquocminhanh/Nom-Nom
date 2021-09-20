@@ -86,7 +86,7 @@ class Carousel extends Component {
         let modalImage = this.state.isModalImageShow? 
             
             <ModalImages 
-                src={this.props.src[this.state.id]} 
+                src={this.props.src[this.state.id].srcImg} 
                 closeClicked={this.closeClickedHandler}
                 isPrevHidden={this.state.isPrevHidden}
                 isNextHidden={this.state.isNextHidden}
@@ -103,8 +103,11 @@ class Carousel extends Component {
                 <div className={classes.Carousel} ref={this.myRef}> 
                     {this.state.src.map((item, index) => {
                         return <div className={classes.Card} onClick={() => this.imageCardClickedHandler(index)}>
-                            <img src={item}/>
-                            <div className={classes.OverLay}>Discover More</div>
+                            <img src={item.srcImg}/>
+                            <div className={classes.OverLay}>
+                                <p>Discover More</p>
+                                <p>{item.name}</p>
+                            </div>
                         </div>
                     })}
                 </div>

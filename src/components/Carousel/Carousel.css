@@ -44,12 +44,21 @@
     cursor: pointer;
 }
 
+.Card:hover img,
+.Card:focus img {
+    transform: scale(1.15);
+}
+
 .Card img {
     border-radius: 3px;
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
 }
 
 .OverLay {
@@ -61,10 +70,11 @@
     width: 100%;
     transition: all 0.4s;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.65);
     /* hidden or show*/
     visibility: hidden;
     opacity: 0;

@@ -239,7 +239,7 @@ class Intro extends Component {
 
                     <Carousel 
                         imageCardClicked={this.imageCardClickedHandler}
-                        src={[img.dalon, img.banhbo, img.specialdish3, img.goi, img.cuon, img.banhbotloc, img.banhuot, img.raucau, img.mixbrown, img.mixraucau, img.mixdrinks, img.che]}
+                        src={[{name: 'Bánh da lợn', srcImg: img.dalon}, {name: 'Bánh bò', srcImg: img.banhbo}, {name: 'Bánh khoai mì', srcImg: img.specialdish3}, {name: 'Gỏi tôm thịt', srcImg: img.goi}, {name: 'Gỏi cuốn', srcImg: img.cuon}, {name: 'Bánh bột lọc', srcImg: img.banhbotloc}, {name: 'Bánh cuốn', srcImg: img.banhuot}, {name: 'Rau câu', srcImg: img.raucau}, {name: 'Brownies', srcImg: img.mixbrown}, {name: 'Rau câu', srcImg: img.mixraucau}, {name: 'Trà thái', srcImg: img.mixdrinks}, {name: 'Sương sa hột lựu', srcImg: img.che}]}
                     />
 
                     <div className={classes.Title} style={{fontStyle: 'italic'}}>

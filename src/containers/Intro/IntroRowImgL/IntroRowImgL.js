@@ -47,7 +47,6 @@ class IntroRowImgL extends Component {
                                     backgroundPosition: 'center center',
                                     backgroundSize: 'cover',
                                     backgroundRepeat: 'no-repeat',
-                                    transition: 'background-image 1s linear'
                                 }}>     
                                     <div className={classes.NonBreakingSpace}>
                                         {emptyLines}

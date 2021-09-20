@@ -61,14 +61,13 @@ class IntroRowImgR extends Component {
                                     backgroundImage: `url(${this.props.backgroundImageRight[this.state.currenBackGroundImageIdex]})`,
                                     backgroundPosition: 'center center',
                                     backgroundSize: 'cover',
-                                    backgroundRepeat: 'no-repeat',
-                                    transition: 'background-image 1s linear'
+                                    backgroundRepeat: 'no-repeat'
                                 }}> 
                                     <div className={classes.NonBreakingSpace}>
                                         {emptyLines}
                                     </div>
-                                    {dots}
                             </div>
+                            {dots}
                         </Zoom>
                     </div>
                 </div>

@@ -23,8 +23,10 @@
     align-self: stretch;
     /* IMPORTANT */
     width: 100%;
+    overflow: hidden;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
 .LeftColumn {
@@ -44,6 +46,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 
 .RightColumn {
     box-sizing: border-box;

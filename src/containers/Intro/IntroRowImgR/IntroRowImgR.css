@@ -42,12 +42,22 @@
     width: 100%;
     padding: 0;
     box-sizing: border-box;
+    overflow: hidden;   
+    position: relative;
+}
+
+.RightColumnWrap:hover .RightColumn,
+.RightColumnWrap:focus .RightColumn {
+    transform: scale(1.2);
 }
 
 .RightColumn {
     box-sizing: border-box;
     height: 100%;
-    position: relative;
+    -webkit-transition: all .8s ease-in-out;
+    -moz-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
 }
 
 .NonBreakingSpace p{

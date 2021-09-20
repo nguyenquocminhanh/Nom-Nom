@@ -28,7 +28,7 @@
     justify-content: center;
     visibility: hidden;
     opacity: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.6);
     color: #fff;
     transition: all 0.4s;
 }
